@@ -32,24 +32,54 @@
     <section id="projects" class="projects">
         <h2>行业项目</h2>
         <div class="projects-grid">
-            <!-- 各行业子板块展示 -->
+            <!-- 医疗行业 -->
             <div class="project-item">
-                <img src="https://via.placeholder.com/300x200/667eea/ffffff?text=医疗健康" alt="医疗健康">
-                <p>医疗健康</p>
-                <a href="#medical" class="view-more">点击查看</a>
+                
+                <p>医疗行业</p>
+                <a href="#medical" class="view-more" data-section="medical">点击查看</a>
             </div>
+            <!-- 政府与大型企业 -->
             <div class="project-item">
-                <img src="https://via.placeholder.com/300x200/764ba2/ffffff?text=政府企业" alt="政府与大型企业">
+                
                 <p>政府与大型企业</p>
-                <a href="#government" class="view-more">点击查看</a>
+                <a href="#government" class="view-more" data-section="government">点击查看</a>
             </div>
+            <!-- 文旅文博 -->
             <div class="project-item">
-                <img src="https://via.placeholder.com/300x200/4CAF50/ffffff?text=文旅文博" alt="文旅文博">
+                
                 <p>文旅文博</p>
-                <a href="#tourism" class="view-more">点击查看</a>
+                <a href="#tourism" class="view-more" data-section="tourism">点击查看</a>
+            </div>
+            <!-- VR游戏开发 -->
+            <div class="project-item">
+                
+                <p>VR游戏开发</p>
+                <a href="#vr-gaming" class="view-more" data-section="vr-gaming">点击查看</a>
+            </div>
+            <!-- 工业与制造 -->
+            <div class="project-item">
+                
+                <p>工业与制造</p>
+                <a href="#industrial" class="view-more" data-section="industrial">点击查看</a>
+            </div>
+            <!-- 展会、产品、零售 -->
+            <div class="project-item">
+                
+                <p>展会、产品、零售</p>
+                <a href="#retail" class="view-more" data-section="retail">点击查看</a>
             </div>
         </div>
     </section>
+
+    <!-- 详情内容区域 -->
+    <div id="detail-overlay" class="detail-overlay">
+        <div class="detail-content">
+            <span class="close-btn">&times;</span>
+            <div id="detail-section">
+                <!-- 内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
 
     <!-- 特色板块 -->
     <section id="features" class="features">
@@ -81,5 +111,70 @@
     <footer>
         <p>© 2025 工作室名称 - 版权所有</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 详情内容数据
+        const detailContent = {
+            'medical': `
+                <h2>医疗行业</h2>
+                <p>111</p>
+                <p>这里可以添加医疗行业项目的详细描述</p>
+            `,
+            'government': `
+                <h2>政府与大型企业</h2>
+                <p>222</p>
+                <p>这里可以添加政府与大型企业项目的详细描述</p>
+            `,
+            'tourism': `
+                <h2>文旅文博</h2>
+                <p>333</p>
+                <p>这里可以添加文旅文博项目的详细描述</p>
+            `,
+            'vr-gaming': `
+                <h2>VR游戏开发</h2>
+                <p>444</p>
+                <p>这里可以添加VR游戏开发项目的详细描述</p>
+            `,
+            'industrial': `
+                <h2>工业与制造</h2>
+                <p>555</p>
+                <p>这里可以添加工业与制造项目的详细描述</p>
+            `,
+            'retail': `
+                <h2>展会、产品、零售</h2>
+                <p>666</p>
+                <p>这里可以添加展会、产品、零售项目的详细描述</p>
+            `
+        };
+
+        // 获取DOM元素
+        const viewMoreButtons = document.querySelectorAll('.view-more');
+        const detailOverlay = document.getElementById('detail-overlay');
+        const detailSection = document.getElementById('detail-section');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // 为每个"点击查看"按钮添加点击事件
+        viewMoreButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = this.getAttribute('data-section');
+                detailSection.innerHTML = detailContent[section];
+                detailOverlay.style.display = 'flex';
+            });
+        });
+
+        // 关闭详情弹窗
+        closeBtn.addEventListener('click', function() {
+            detailOverlay.style.display = 'none';
+        });
+
+        // 点击弹窗外部关闭
+        detailOverlay.addEventListener('click', function(e) {
+            if (e.target === detailOverlay) {
+                detailOverlay.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
