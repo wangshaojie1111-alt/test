@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>工作室网站</title>
-    <!-- 重要：CSS链接在这里 -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome 图标库（可选） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -25,53 +26,172 @@
         <div class="hero-content">
             <h1>展示工作室的专业能力与创新案例</h1>
             <p>我们提供高端的视频制作、数字媒体项目、交互项目等服务。</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn-primary">查看项目</a>
+                <a href="#contact" class="btn-secondary">联系我们</a>
+            </div>
         </div>
     </section>
 
     <!-- 行业项目 -->
     <section id="projects" class="projects">
-        <h2>行业项目</h2>
+        <div class="section-header">
+            <h2>行业项目</h2>
+            <p>我们专注于多个行业领域，提供专业解决方案</p>
+        </div>
         <div class="projects-grid">
             <!-- 医疗行业 -->
             <div class="project-item">
-                
-                <p>医疗行业</p>
-                <a href="#medical" class="view-more" data-section="medical">点击查看</a>
+                <div class="project-img">
+                    <img src="images/medical.jpg" alt="医疗行业" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/4CAF50/ffffff?text=医疗'">
+                </div>
+                <h3>医疗行业</h3>
+                <p>专业的医疗健康解决方案</p>
+                <a href="#medical" class="view-more" data-section="medical">点击查看详情 <i class="fas fa-arrow-right"></i></a>
             </div>
+            
             <!-- 政府与大型企业 -->
             <div class="project-item">
-                
-                <p>政府与大型企业</p>
-                <a href="#government" class="view-more" data-section="government">点击查看</a>
+                <div class="project-img">
+                    <img src="images/government.jpg" alt="政府与大型企业" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/2196F3/ffffff?text=政府'">
+                </div>
+                <h3>政府与大型企业</h3>
+                <p>政府与企业数字化解决方案</p>
+                <a href="#government" class="view-more" data-section="government">点击查看详情 <i class="fas fa-arrow-right"></i></a>
             </div>
+            
             <!-- 文旅文博 -->
             <div class="project-item">
-                
-                <p>文旅文博</p>
-                <a href="#tourism" class="view-more" data-section="tourism">点击查看</a>
+                <div class="project-img">
+                    <img src="images/tourism.jpg" alt="文旅文博" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/FF9800/ffffff?text=文旅'">
+                </div>
+                <h3>文旅文博</h3>
+                <p>文化旅游与文博创新项目</p>
+                <a href="#tourism" class="view-more" data-section="tourism">点击查看详情 <i class="fas fa-arrow-right"></i></a>
             </div>
+            
             <!-- VR游戏开发 -->
             <div class="project-item">
-                
-                <p>VR游戏开发</p>
-                <a href="#vr-gaming" class="view-more" data-section="vr-gaming">点击查看</a>
+                <div class="project-img">
+                    <img src="images/vr-gaming.jpg" alt="VR游戏开发" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/9C27B0/ffffff?text=VR'">
+                </div>
+                <h3>VR游戏开发</h3>
+                <p>沉浸式虚拟现实体验</p>
+                <a href="#vr-gaming" class="view-more" data-section="vr-gaming">点击查看详情 <i class="fas fa-arrow-right"></i></a>
             </div>
+            
             <!-- 工业与制造 -->
             <div class="project-item">
-                
-                <p>工业与制造</p>
-                <a href="#industrial" class="view-more" data-section="industrial">点击查看</a>
+                <div class="project-img">
+                    <img src="images/industrial.jpg" alt="工业与制造" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/607D8B/ffffff?text=工业'">
+                </div>
+                <h3>工业与制造</h3>
+                <p>工业4.0与智能制造方案</p>
+                <a href="#industrial" class="view-more" data-section="industrial">点击查看详情 <i class="fas fa-arrow-right"></i></a>
             </div>
+            
             <!-- 展会、产品、零售 -->
             <div class="project-item">
-                
-                <p>展会、产品、零售</p>
-                <a href="#retail" class="view-more" data-section="retail">点击查看</a>
+                <div class="project-img">
+                    <img src="images/retail.jpg" alt="展会、产品、零售" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/E91E63/ffffff?text=零售'">
+                </div>
+                <h3>展会、产品、零售</h3>
+                <p>零售与展会营销解决方案</p>
+                <a href="#retail" class="view-more" data-section="retail">点击查看详情 <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- 详情内容区域 -->
+    <!-- 特色板块 -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>特色板块</h2>
+            <p>我们的核心优势与特色服务</p>
+        </div>
+        <div class="features-grid">
+            <!-- 运营推广案例 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>运营推广案例</h3>
+                <p>展示我们的运营推广成功案例与策略</p>
+                <a href="#operation" class="view-feature" data-section="operation">查看案例 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- 高端与亲民结合 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>高端与亲民结合</h3>
+                <p>高端设计与亲民体验的完美融合</p>
+                <a href="#premium" class="view-feature" data-section="premium">查看详情 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- AI+赋能创新 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI+赋能创新</h3>
+                <p>AI技术驱动的创新解决方案</p>
+                <a href="#ai" class="view-feature" data-section="ai">查看案例 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- 案例总汇 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-folder-open"></i>
+                </div>
+                <h3>案例总汇</h3>
+                <p>浏览我们所有的成功案例与项目</p>
+                <a href="#all-cases" class="view-feature" data-section="all-cases">查看全部 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>联系我们</h2>
+            <p>欢迎与我们合作，共创美好未来</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>邮箱</h4>
+                    <p>contact@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>电话</h4>
+                    <p>+86 138-0000-0000</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>地址</h4>
+                    <p>北京市某某区某某路123号</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 工作室名称 - 版权所有</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 详情弹窗 -->
     <div id="detail-overlay" class="detail-overlay">
         <div class="detail-content">
             <span class="close-btn">&times;</span>
@@ -81,75 +201,156 @@
         </div>
     </div>
 
-    <!-- 特色板块 -->
-    <section id="features" class="features">
-        <h2>特色板块</h2>
-        <div class="features-grid">
-            <div class="feature-item">
-                <h3>运营推广案例</h3>
-                <p>展示我们的运营推广成功案例</p>
-            </div>
-            <div class="feature-item">
-                <h3>高端与亲民结合</h3>
-                <p>高端设计与亲民体验的完美融合</p>
-            </div>
-            <div class="feature-item">
-                <h3>AI+赋能创新</h3>
-                <p>AI技术驱动的创新解决方案</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
-    <section id="contact" class="contact">
-        <h2>联系我们</h2>
-        <p>邮箱：contact@example.com</p>
-        <p>电话：+86 138-0000-0000</p>
-        <p>地址：北京市某某区某某路123号</p>
-    </section>
-
-    <footer>
-        <p>© 2025 工作室名称 - 版权所有</p>
-    </footer>
-
     <!-- JavaScript -->
     <script>
         // 详情内容数据
         const detailContent = {
-            'medical': `
-                <h2>医疗行业</h2>
-                <p>111</p>
-                <p>这里可以添加医疗行业项目的详细描述</p>
-            `,
-            'government': `
-                <h2>政府与大型企业</h2>
-                <p>222</p>
-                <p>这里可以添加政府与大型企业项目的详细描述</p>
-            `,
-            'tourism': `
-                <h2>文旅文博</h2>
-                <p>333</p>
-                <p>这里可以添加文旅文博项目的详细描述</p>
-            `,
-            'vr-gaming': `
-                <h2>VR游戏开发</h2>
-                <p>444</p>
-                <p>这里可以添加VR游戏开发项目的详细描述</p>
-            `,
-            'industrial': `
-                <h2>工业与制造</h2>
-                <p>555</p>
-                <p>这里可以添加工业与制造项目的详细描述</p>
-            `,
-            'retail': `
-                <h2>展会、产品、零售</h2>
-                <p>666</p>
-                <p>这里可以添加展会、产品、零售项目的详细描述</p>
-            `
+            // 行业项目
+            'medical': {
+                title: '医疗行业',
+                content: `
+                    <h2>医疗行业解决方案</h2>
+                    <p>111</p>
+                    <p>这里可以添加医疗行业项目的详细描述，包括：</p>
+                    <ul>
+                        <li>医疗健康应用开发</li>
+                        <li>医疗数据可视化</li>
+                        <li>远程医疗解决方案</li>
+                        <li>医疗设备交互设计</li>
+                    </ul>
+                `
+            },
+            'government': {
+                title: '政府与大型企业',
+                content: `
+                    <h2>政府与大型企业解决方案</h2>
+                    <p>222</p>
+                    <p>这里可以添加政府与大型企业项目的详细描述，包括：</p>
+                    <ul>
+                        <li>政府数字化转型</li>
+                        <li>企业管理系统开发</li>
+                        <li>数据安全与隐私保护</li>
+                        <li>智慧城市解决方案</li>
+                    </ul>
+                `
+            },
+            'tourism': {
+                title: '文旅文博',
+                content: `
+                    <h2>文旅文博解决方案</h2>
+                    <p>333</p>
+                    <p>这里可以添加文旅文博项目的详细描述，包括：</p>
+                    <ul>
+                        <li>文化遗产数字化展示</li>
+                        <li>旅游景区互动体验</li>
+                        <li>博物馆虚拟导览</li>
+                        <li>文化创意产品开发</li>
+                    </ul>
+                `
+            },
+            'vr-gaming': {
+                title: 'VR游戏开发',
+                content: `
+                    <h2>VR游戏开发解决方案</h2>
+                    <p>444</p>
+                    <p>这里可以添加VR游戏开发项目的详细描述，包括：</p>
+                    <ul>
+                        <li>沉浸式VR游戏开发</li>
+                        <li>虚拟现实体验设计</li>
+                        <li>AR互动应用开发</li>
+                        <li>游戏化学习解决方案</li>
+                    </ul>
+                `
+            },
+            'industrial': {
+                title: '工业与制造',
+                content: `
+                    <h2>工业与制造解决方案</h2>
+                    <p>555</p>
+                    <p>这里可以添加工业与制造项目的详细描述，包括：</p>
+                    <ul>
+                        <li>工业4.0智能工厂</li>
+                        <li>制造过程可视化</li>
+                        <li>设备维护与监控系统</li>
+                        <li>供应链管理系统</li>
+                    </ul>
+                `
+            },
+            'retail': {
+                title: '展会、产品、零售',
+                content: `
+                    <h2>展会、产品、零售解决方案</h2>
+                    <p>666</p>
+                    <p>这里可以添加展会、产品、零售项目的详细描述，包括：</p>
+                    <ul>
+                        <li>虚拟展会平台开发</li>
+                        <li>产品3D展示</li>
+                        <li>零售门店数字化</li>
+                        <li>电商解决方案</li>
+                    </ul>
+                `
+            },
+            // 特色板块
+            'operation': {
+                title: '运营推广案例',
+                content: `
+                    <h2>运营推广案例</h2>
+                    <p>777</p>
+                    <p>这里展示我们的运营推广成功案例，包括：</p>
+                    <ul>
+                        <li>社交媒体营销活动</li>
+                        <li>内容营销策略</li>
+                        <li>用户增长案例</li>
+                        <li>品牌推广成果</li>
+                    </ul>
+                `
+            },
+            'premium': {
+                title: '高端与亲民结合',
+                content: `
+                    <h2>高端与亲民结合</h2>
+                    <p>888</p>
+                    <p>我们擅长将高端设计与亲民体验完美融合，包括：</p>
+                    <ul>
+                        <li>高端品牌形象设计</li>
+                        <li>亲民用户体验优化</li>
+                        <li>跨层级产品策略</li>
+                        <li>多元化用户服务</li>
+                    </ul>
+                `
+            },
+            'ai': {
+                title: 'AI+赋能创新',
+                content: `
+                    <h2>AI+赋能创新</h2>
+                    <p>999</p>
+                    <p>我们利用AI技术驱动创新，包括：</p>
+                    <ul>
+                        <li>AI内容生成</li>
+                        <li>智能数据分析</li>
+                        <li>机器学习应用</li>
+                        <li>自动化流程优化</li>
+                    </ul>
+                `
+            },
+            'all-cases': {
+                title: '案例总汇',
+                content: `
+                    <h2>案例总汇</h2>
+                    <p>000</p>
+                    <p>浏览我们所有的成功案例与项目，包括：</p>
+                    <ul>
+                        <li>行业解决方案案例</li>
+                        <li>客户成功故事</li>
+                        <li>项目成果展示</li>
+                        <li>合作伙伴案例</li>
+                    </ul>
+                `
+            }
         };
 
         // 获取DOM元素
-        const viewMoreButtons = document.querySelectorAll('.view-more');
+        const viewMoreButtons = document.querySelectorAll('.view-more, .view-feature');
         const detailOverlay = document.getElementById('detail-overlay');
         const detailSection = document.getElementById('detail-section');
         const closeBtn = document.querySelector('.close-btn');
@@ -159,21 +360,58 @@
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const section = this.getAttribute('data-section');
-                detailSection.innerHTML = detailContent[section];
-                detailOverlay.style.display = 'flex';
+                const content = detailContent[section];
+                
+                if (content) {
+                    detailSection.innerHTML = `
+                        <h1>${content.title}</h1>
+                        ${content.content}
+                    `;
+                    detailOverlay.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                }
             });
         });
 
         // 关闭详情弹窗
         closeBtn.addEventListener('click', function() {
             detailOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
         });
 
         // 点击弹窗外部关闭
         detailOverlay.addEventListener('click', function(e) {
             if (e.target === detailOverlay) {
                 detailOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
+        });
+
+        // 按ESC键关闭弹窗
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                detailOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#') && 
+                    this.getAttribute('href').length > 1) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });
     </script>
 </body>
