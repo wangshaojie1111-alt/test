@@ -3,37 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数媒科技 - 数字媒体应用解决方案</title>
+    <title>数媒科技 - 数字媒体技术应用解决方案</title>
     <style>
-        /* 内嵌基本图标字体 */
+        /* 字体图标样式 */
         .icon { font-family: Arial, sans-serif; }
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- 导航栏 -->
-    <header>
-        <nav>
-            <div class="logo">
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
                 <span class="icon">◇</span>
-                <span>数媒科技</span>
+                <span class="company-name">数媒科技</span>
             </div>
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#projects">行业项目</a></li>
-                <li><a href="#features">特色板块</a></li>
-                <li><a href="#contact">联系我们</a></li>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home">首页</a></li>
+                <li class="nav-item"><a href="#projects">行业项目</a></li>
+                <li class="nav-item"><a href="#features">特色板块</a></li>
+                <li class="nav-item"><a href="#contact">联系我们</a></li>
             </ul>
+            
+            <div class="nav-actions">
+                <button class="contact-btn" onclick="document.querySelector('#contact').scrollIntoView({behavior: 'smooth'})">联系我们</button>
+            </div>
         </nav>
     </header>
 
     <!-- 首页 -->
     <section id="home" class="dynamic-home">
         <div class="hero-content">
-            <h1>展示工作室的专业能力与创新案例</h1>
-            <p>我们提供高端的视频制作、数字媒体项目、交互项目等服务。</p>
+            <h1>数字媒体技术应用解决方案</h1>
+            <p>为医疗健康、城市规划、文旅文博、工业制造、展会零售及VR游戏等行业提供专业的三维动画、VR/AR、数字孪生等高端数媒技术服务</p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">查看项目</a>
+                <a href="#projects" class="btn btn-primary">探索行业应用</a>
                 <a href="#contact" class="btn btn-secondary">联系我们</a>
             </div>
         </div>
@@ -47,7 +52,9 @@
         <div class="projects-grid">
             <!-- 医疗健康 -->
             <div class="project-item" data-sector="medical">
-                <div class="project-icon">⚕️</div>
+                <div class="project-thumbnail">
+                    <img src="images/medical.jpg" alt="医疗健康" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDMwMCAyMjAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij7lvoHnkIblkZjkuIA8L3RleHQ+PC9zdmc+'; this.style.display='block'">
+                </div>
                 <h3>医疗健康</h3>
                 <p>专业的医疗健康解决方案</p>
                 <button class="view-detail">点击查看详情</button>
@@ -55,41 +62,51 @@
             
             <!-- 政府与大型企业 -->
             <div class="project-item" data-sector="government">
-                <div class="project-icon">🏛️</div>
+                <div class="project-thumbnail">
+                    <img src="images/government.jpg" alt="政府与大型企业" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDMwMCAyMjAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij7lnKPor4HnmoTkuK3lm73kuJrmiJDkuLvpopg8L3RleHQ+PC9zdmc+'; this.style.display='block'">
+                </div>
                 <h3>政府与大型企业</h3>
-                <p>政府与企业数字化解决方案</p>
+                <p>让规划"看得见"，让汇报"听得懂"</p>
                 <button class="view-detail">点击查看详情</button>
             </div>
             
             <!-- 文旅文博 -->
             <div class="project-item" data-sector="tourism">
-                <div class="project-icon">🏔️</div>
+                <div class="project-thumbnail">
+                    <img src="images/tourism.jpg" alt="文旅文博" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDMwMCAyMjAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij7msrPlvJXkuJzkuJ3lsrM8L3RleHQ+PC9zdmc+'; this.style.display='block'">
+                </div>
                 <h3>文旅文博</h3>
-                <p>文化旅游与文博创新项目</p>
+                <p>让文物"活"起来，让体验"沉"进去</p>
                 <button class="view-detail">点击查看详情</button>
             </div>
             
             <!-- 工业与制造 -->
             <div class="project-item" data-sector="industrial">
-                <div class="project-icon">⚙️</div>
+                <div class="project-thumbnail">
+                    <img src="images/industrial.jpg" alt="工业与制造" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDMwMCAyMjAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZHRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij7kuIjkuKrkuK3lm73kvZw8L3RleHQ+PC9zdmc+'; this.style.display='block'">
+                </div>
                 <h3>工业与制造</h3>
-                <p>工业4.0与智能制造方案</p>
+                <p>从"制造"到"智造"的视觉引擎</p>
                 <button class="view-detail">点击查看详情</button>
             </div>
             
             <!-- 展会、产品、零售 -->
             <div class="project-item" data-sector="retail">
-                <div class="project-icon">🛍️</div>
+                <div class="project-thumbnail">
+                    <img src="images/retail.jpg" alt="展会、产品、零售" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDMwMCAyMjAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij7muIXnuq/kv6Hmga/lj4vprZQ8L3RleHQ+PC9zdmc+'; this.style.display='block'">
+                </div>
                 <h3>展会、产品、零售</h3>
-                <p>零售与展会营销解决方案</p>
+                <p>极致的视觉体验抢夺消费者注意力</p>
                 <button class="view-detail">点击查看详情</button>
             </div>
             
             <!-- VR游戏开发 -->
             <div class="project-item" data-sector="vr-gaming">
-                <div class="project-icon">🎮</div>
+                <div class="project-thumbnail">
+                    <img src="images/vr-gaming.jpg" alt="VR游戏开发" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIyMCIgdmlld0JveD0iMCAwIDMwMCAyMjAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5WUuWkqeWQjeW8leeUqDwvdGV4dD48L3N2Zz4='; this.style.display='block'">
+                </div>
                 <h3>VR游戏开发</h3>
-                <p>沉浸式虚拟现实体验</p>
+                <p>高品质视觉内容与沉浸式交互体验相结合</p>
                 <button class="view-detail">点击查看详情</button>
             </div>
         </div>
@@ -180,7 +197,7 @@
     </div>
 
     <script>
-        // 详情内容数据
+        // 详情内容数据 - 确保文案内容完全按照文档
         const sectorDetails = {
             'medical': {
                 title: '医疗健康',
@@ -188,27 +205,25 @@
                     <h3>医疗健康行业应用场景及案例</h3>
                     <p class="highlight">解决医疗健康领域"诊疗过程不直观、技能培训高风险、复杂知识难沟通、患者管理低效"的核心痛点。实现诊疗精准化、培训安全化、沟通直观化、管理智能化。</p>
                     
-                    <div class="medical-columns">
-                        <div class="column">
-                            <h4>1. 医院临床与患者服务</h4>
-                            <p><strong>应用形式：</strong>三维动画、VR数媒治疗、数字人助手、手术模拟</p>
-                            <p><strong>应用场景：</strong>医患沟通（疾病机理、手术方案讲解）、VR心理治疗与疼痛管理、数字人智能预问诊、数字人指引、基于患者数据的个性化术前规划</p>
-                            <p><strong>应用价值：</strong>提升患者知情度与就医体验，辅助疼痛管理，提高医生诊疗效率与手术精准度，构建和谐医患关系。</p>
-                        </div>
-                        
-                        <div class="column">
-                            <h4>2. 医学教育与技能培训</h4>
-                            <p><strong>应用形式：</strong>VR沉浸式解剖、高仿真手术模拟器、急诊模拟演练</p>
-                            <p><strong>应用场景：</strong>医学生进行虚拟解剖、外科医生在零风险环境下练习腹腔镜等复杂手术操作、医护团队进行重症应急演练、知识培训等</p>
-                            <p><strong>应用价值：</strong>解决"尸体资源稀缺、实操高风险、不可逆"的矛盾，实现安全、可重复、高效率的标准化培训。</p>
-                        </div>
-                        
-                        <div class="column">
-                            <h4>3. 医疗器械与药品营销</h4>
-                            <p><strong>应用形式：</strong>产品原理动画、手术流程演示、AR互动手册、药品作用机制可视化</p>
-                            <p><strong>应用场景：</strong>医疗器械产品演示、药品作用机理可视化、手术流程培训、AR互动产品手册</p>
-                            <p><strong>应用价值：</strong>提升产品理解度，增强客户信任，提高培训效率，降低沟通成本。</p>
-                        </div>
+                    <div class="detail-section">
+                        <h4>1. 医院临床与患者服务</h4>
+                        <p><strong>应用形式：</strong>三维动画、VR数媒治疗、数字人助手、手术模拟</p>
+                        <p><strong>应用场景：</strong>医患沟通（疾病机理、手术方案讲解）、VR心理治疗与疼痛管理等、数字人智能预问诊、数字人指引、基于患者数据的个性化术前规划。</p>
+                        <p><strong>应用价值：</strong>提升患者知情度与就医体验，辅助疼痛管理，提高医生诊疗效率与手术精准度，构建和谐医患关系。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>2. 医学教育与技能培训</h4>
+                        <p><strong>应用形式：</strong>VR沉浸式解剖、高仿真手术模拟器、急诊模拟演练</p>
+                        <p><strong>应用场景：</strong>医学生进行虚拟解剖、外科医生在零风险环境下练习腹腔镜等复杂手术操作、医护团队进行重症应急演练、知识培训等。</p>
+                        <p><strong>应用价值：</strong>解决"尸体资源稀缺、实操高风险、不可逆"的矛盾，实现安全、可重复、高效率的标准化培训。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>3. 医疗器械与药品营销</h4>
+                        <p><strong>应用形式：</strong>产品原理动画、手术流程演示、AR互动手册、药品作用机制可视化</p>
+                        <p><strong>应用场景：</strong>医疗器械产品演示、药品作用机理可视化、手术流程培训、AR互动产品手册。</p>
+                        <p><strong>应用价值：</strong>提升产品理解度，增强客户信任，提高培训效率，降低沟通成本。</p>
                     </div>
                     
                     <div class="video-section">
@@ -252,13 +267,22 @@
                     <h3>政府与大型企业</h3>
                     <p class="highlight">让规划"看得见"，让汇报"听得懂"，助力决策与公众沟通。</p>
                     
-                    <div class="detail-list">
-                        <h4>主要应用方向：</h4>
-                        <ul>
-                            <li><strong>城市规划与招商推介：</strong>通过三维动画宣传片、数字沙盘，动态展示未来城市面貌与产业布局，增强投资者信心，提升项目获批概率。</li>
-                            <li><strong>重大工程可视化汇报：</strong>运用施工动画、BIM可视化，清晰演示地铁、核电站等超级工程的复杂工艺，凸显技术实力，透明化项目价值。</li>
-                            <li><strong>宣传科普与应急预案：</strong>制作易于理解的动画视频，普及法规知识；利用VR仿真进行灾害模拟推演，提升应急响应能力，降低演练成本。</li>
-                        </ul>
+                    <div class="detail-section">
+                        <h4>1. 城市规划与招商推介</h4>
+                        <p><strong>应用形式：</strong>三维动画宣传片、数字沙盘</p>
+                        <p><strong>应用场景：</strong>通过三维动画宣传片、数字沙盘，动态展示未来城市面貌与产业布局，增强投资者信心，提升项目获批概率。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>2. 重大工程可视化汇报</h4>
+                        <p><strong>应用形式：</strong>施工动画、BIM可视化</p>
+                        <p><strong>应用场景：</strong>运用施工动画、BIM可视化，清晰演示地铁、核电站等超级工程的复杂工艺，凸显技术实力，透明化项目价值。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>3. 宣传科普与应急预案</h4>
+                        <p><strong>应用形式：</strong>动画视频、VR仿真</p>
+                        <p><strong>应用场景：</strong>制作易于理解的动画视频，普及法规知识；利用VR仿真进行灾害模拟推演，提升应急响应能力，降低演练成本。</p>
                     </div>
                     
                     <div class="video-section">
@@ -295,13 +319,22 @@
                     <h3>文旅文博行业</h3>
                     <p class="highlight">让文物"活"起来，让体验"沉"进去，实现文化资产的活化与变现。</p>
                     
-                    <div class="detail-list">
-                        <h4>主要应用方向：</h4>
-                        <ul>
-                            <li><strong>文物复原与数字展陈：</strong>通过高清三维建模、AR互动，让游客360度观赏珍贵文物，甚至"复原"破损部分，提供超越实物的观察视角。</li>
-                            <li><strong>沉浸式历史穿越体验：</strong>打造VR时空穿越项目、沉浸式展厅，让游客身临其境感受古代场景，将文化IP转化为爆款旅游产品。</li>
-                            <li><strong>智能导览与数字文创：</strong>定制数字人导游，提供个性化讲解；制作文物IP的裸眼3D视频、数字藏品，进行低成本高效营销与创新变现。</li>
-                        </ul>
+                    <div class="detail-section">
+                        <h4>1. 文物复原与数字展陈</h4>
+                        <p><strong>应用形式：</strong>高清三维建模、AR互动</p>
+                        <p><strong>应用场景：</strong>通过高清三维建模、AR互动，让游客360度观赏珍贵文物，甚至"复原"破损部分，提供超越实物的观察视角。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>2. 沉浸式历史穿越体验</h4>
+                        <p><strong>应用形式：</strong>VR时空穿越项目、沉浸式展厅</p>
+                        <p><strong>应用场景：</strong>打造VR时空穿越项目、沉浸式展厅，让游客身临其境感受古代场景，将文化IP转化为爆款旅游产品。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>3. 智能导览与数字文创</h4>
+                        <p><strong>应用形式：</strong>数字人导游、裸眼3D视频、数字藏品</p>
+                        <p><strong>应用场景：</strong>定制数字人导游，提供个性化讲解；制作文物IP的裸眼3D视频、数字藏品，进行低成本高效营销与创新变现。</p>
                     </div>
                     
                     <div class="video-section">
@@ -316,7 +349,7 @@
                             </div>
                             <div class="video-thumb" data-video="wl-2-2.mp4" data-title="VR历史体验">
                                 <div class="thumb-img">
-                                    <img src="images/wl-1-2.jpg" alt="VR历史体验" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5XTDI6IFZS5Z2Q5YiG6L+bPC9zdmc+'>
+                                    <img src="images/wl-1-2.jpg" alt="VR历史体验" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZHRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5XTDI6IFZS5Z2Q5YiG6L+bPC9zdmc+'>
                                     <div class="play-overlay">▶</div>
                                 </div>
                                 <p>VR历史体验</p>
@@ -338,13 +371,22 @@
                     <h3>工业与制造行业</h3>
                     <p class="highlight">从"制造"到"智造"的视觉引擎，实现降本增效和营销升级。</p>
                     
-                    <div class="detail-list">
-                        <h4>主要应用方向：</h4>
-                        <ul>
-                            <li><strong>营销与售后支持：</strong>为复杂设备制作工作原理动画，辅助AR远程维修，降低沟通成本，提升售后效率，打造高端品牌形象。</li>
-                            <li><strong>智能工厂与数字孪生：</strong>构建生产线的数字孪生体，三维可视化生产状态与物料流动，用于产能优化和瓶颈分析，是实现工业4.0的核心。</li>
-                            <li><strong>安全与操作培训：</strong>通过VR模拟高危设备操作和违规后果，实现"零风险"的安全培训，深刻强化员工安全意识。</li>
-                        </ul>
+                    <div class="detail-section">
+                        <h4>1. 营销与售后支持</h4>
+                        <p><strong>应用形式：</strong>三维建模、虚拟装配、AR远程维修</p>
+                        <p><strong>应用场景：</strong>为复杂设备制作工作原理动画，辅助AR远程维修，降低沟通成本，提升售后效率，打造高端品牌形象。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>2. 智能工厂与数字孪生</h4>
+                        <p><strong>应用形式：</strong>数字孪生体、三维可视化</p>
+                        <p><strong>应用场景：</strong>构建生产线的数字孪生体，三维可视化生产状态与物料流动，用于产能优化和瓶颈分析，是实现工业4.0的核心。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>3. 安全与操作培训</h4>
+                        <p><strong>应用形式：</strong>VR安全培训</p>
+                        <p><strong>应用场景：</strong>通过VR模拟高危设备操作和违规后果，实现"零风险"的安全培训，深刻强化员工安全意识。</p>
                     </div>
                     
                     <div class="video-section">
@@ -374,12 +416,16 @@
                     <h3>展会、产品发布与零售</h3>
                     <p class="highlight">以极致视觉体验抢夺注意力，打造品牌记忆点，促进销售转化。</p>
                     
-                    <div class="detail-list">
-                        <h4>主要应用方向：</h4>
-                        <ul>
-                            <li><strong>展台互动与引流：</strong>运用AR互动、全息投影等技术，让产品模型跃然纸上，成为展馆流量中心，高效获客。</li>
-                            <li><strong>产品发布与零售体验：</strong>通过裸眼3D视频、MR混合现实演示，让新品发布会震撼人心；提供VR虚拟试装、AI数字人导购，提升购物便捷度，打造科技化高端形象。</li>
-                        </ul>
+                    <div class="detail-section">
+                        <h4>1. 展台互动与引流</h4>
+                        <p><strong>应用形式：</strong>AR互动、全息投影</p>
+                        <p><strong>应用场景：</strong>运用AR互动、全息投影等技术，让产品模型跃然纸上，成为展馆流量中心，高效获客。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>2. 产品发布与零售体验</h4>
+                        <p><strong>应用形式：</strong>裸眼3D视频、MR混合现实演示、VR虚拟试装、AI数字人导购</p>
+                        <p><strong>应用场景：</strong>通过裸眼3D视频、MR混合现实演示，让新品发布会震撼人心；提供VR虚拟试装、AI数字人导购，提升购物便捷度，打造科技化高端形象。</p>
                     </div>
                     
                     <div class="video-section">
@@ -387,14 +433,14 @@
                         <div class="video-grid">
                             <div class="video-thumb" data-video="zl-2-1.mp4" data-title="展会AR互动案例">
                                 <div class="thumb-img">
-                                    <img src="images/zl-1-1.jpg" alt="展会AR互动案例" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5aTDoxIOW+geaWh+FK5Lqk5oGv5L+dPC9zdmc+'>
+                                    <img src="images/zl-1-1.jpg" alt="展会AR互动案例" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZHRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5aTDoxIOW+geaWh+FK5Lqk5oGv5L+dPC9zdmc+'>
                                     <div class="play-overlay">▶</div>
                                 </div>
                                 <p>展会AR互动案例</p>
                             </div>
                             <div class="video-thumb" data-video="zl-2-2.mp4" data-title="产品发布3D展示">
                                 <div class="thumb-img">
-                                    <img src="images/zl-1-2.jpg" alt="产品发布3D展示" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5aTDI6IOWkp+S6jOe7tOaAp+aAp+i0tDwvc3ZnPg=='>
+                                    <img src="images/zl-1-2.jpg" alt="产品发布3D展示" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9IiNmMGYwZjAiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZHRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOTk5Ij5aTDI6IOWkp+S6jOe7tOaAp+aAp+i0tDwvc3ZnPg=='>
                                     <div class="play-overlay">▶</div>
                                 </div>
                                 <p>产品发布3D展示</p>
@@ -409,14 +455,24 @@
                     <h3>VR/AR内容与游戏定制开发</h3>
                     <p class="highlight">提供专业的VR/AR产品研发与内容定制服务，将高品质视觉与沉浸式交互相结合。</p>
                     
-                    <div class="detail-list">
-                        <h4>服务内容：</h4>
-                        <ul>
-                            <li><strong>UE引擎场景开发与优化：</strong>构建高沉浸感的VR场景，确保稳定流畅的视觉体验。</li>
-                            <li><strong>3D美术与角色全流程制作：</strong>提供从原画到模型的全套美术生产，保障内容高质量。</li>
-                            <li><strong>VR交互设计与程序实现：</strong>设计符合人体工学的直觉交互方案，确保玩法可靠有趣。</li>
-                            <li><strong>服务模式：</strong>提供完整游戏开发、内容模块定制、联合开发与技术支持。</li>
-                        </ul>
+                    <div class="detail-section">
+                        <h4>1. UE引擎场景开发与优化</h4>
+                        <p>构建高沉浸感的VR场景，确保稳定流畅的视觉体验。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>2. 3D美术与角色全流程制作</h4>
+                        <p>提供从原画到模型的全套美术生产，保障内容高质量。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>3. VR交互设计与程序实现</h4>
+                        <p>设计符合人体工学的直觉交互方案，确保玩法可靠有趣。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>4. 服务模式</h4>
+                        <p>提供完整游戏开发、内容模块定制、联合开发与技术支持。</p>
                     </div>
                     
                     <div class="video-section">
@@ -443,13 +499,22 @@
                     <h3>高端与亲民结合</h3>
                     <p class="highlight">我们擅长将高端设计与亲民体验完美融合，打造既有视觉震撼力又易于使用的数字媒体解决方案。</p>
                     
-                    <div class="detail-list">
+                    <div class="detail-section">
                         <h4>核心理念：</h4>
                         <ul>
                             <li><strong>高端视觉表现：</strong>运用行业领先的三维动画、虚拟现实技术，呈现电影级视觉效果</li>
                             <li><strong>亲民用户体验：</strong>设计直观易用的交互界面，降低使用门槛，让技术真正服务于用户</li>
                             <li><strong>场景化适配：</strong>根据不同用户群体和使用场景，定制化调整产品复杂度和交互方式</li>
                             <li><strong>价值导向设计：</strong>以解决实际问题为核心，避免过度设计，确保每一分投入都产生实际价值</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h4>实践案例：</h4>
+                        <ul>
+                            <li>为高端医疗机构设计的手术模拟系统，同时满足专家级精度和医学生学习需求</li>
+                            <li>文旅景区的AR导览应用，既有惊艳的文物复原效果，又有简单直观的操作界面</li>
+                            <li>工业企业的数字孪生系统，既展示复杂的生产数据，又提供清晰的可视化报表</li>
                         </ul>
                     </div>
                 `
@@ -514,6 +579,15 @@
             }
         };
 
+        // DOM元素
+        const modal = document.getElementById('detail-modal');
+        const modalBody = document.getElementById('modal-body');
+        const closeBtn = document.querySelector('.close-btn');
+        const videoModal = document.getElementById('video-modal');
+        const videoCloseBtn = document.querySelector('.video-close-btn');
+        const videoPlayer = document.getElementById('video-player');
+        const videoTitle = document.getElementById('video-title');
+
         // 初始化事件绑定
         document.addEventListener('DOMContentLoaded', function() {
             // 绑定行业项目详情按钮
@@ -543,8 +617,8 @@
             });
 
             // 绑定关闭按钮
-            document.querySelector('.close-btn').addEventListener('click', closeDetailModal);
-            document.querySelector('.video-close-btn').addEventListener('click', closeVideoModal);
+            closeBtn.addEventListener('click', closeDetailModal);
+            videoCloseBtn.addEventListener('click', closeVideoModal);
 
             // 点击弹窗外关闭
             document.addEventListener('click', function(e) {
@@ -555,8 +629,8 @@
             // ESC键关闭弹窗
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    if (document.getElementById('detail-modal').style.display === 'block') closeDetailModal();
-                    if (document.getElementById('video-modal').style.display === 'block') closeVideoModal();
+                    if (modal.style.display === 'block') closeDetailModal();
+                    if (videoModal.style.display === 'block') closeVideoModal();
                 }
             });
 
@@ -582,9 +656,6 @@
         function showDetailModal(detail) {
             if (!detail) return;
             
-            const modal = document.getElementById('detail-modal');
-            const modalBody = document.getElementById('modal-body');
-            
             modalBody.innerHTML = `
                 <h2>${detail.title}</h2>
                 ${detail.content}
@@ -595,22 +666,18 @@
 
         // 关闭详情弹窗
         function closeDetailModal() {
-            document.getElementById('detail-modal').style.display = 'none';
+            modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
 
         // 显示视频弹窗
-        function showVideoModal(videoSrc, videoTitle) {
-            const modal = document.getElementById('video-modal');
-            const videoPlayer = document.getElementById('video-player');
-            const videoTitleElement = document.getElementById('video-title');
-            
+        function showVideoModal(videoSrc, videoTitleText) {
             videoPlayer.src = videoSrc;
-            videoTitleElement.textContent = videoTitle;
-            modal.style.display = 'block';
+            videoTitle.textContent = videoTitleText;
+            videoModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
             
-            // 播放视频
+            // 自动播放视频
             setTimeout(() => {
                 videoPlayer.play().catch(e => console.log('自动播放被阻止'));
             }, 300);
@@ -618,12 +685,9 @@
 
         // 关闭视频弹窗
         function closeVideoModal() {
-            const modal = document.getElementById('video-modal');
-            const videoPlayer = document.getElementById('video-player');
-            
             videoPlayer.pause();
             videoPlayer.currentTime = 0;
-            modal.style.display = 'none';
+            videoModal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     </script>
