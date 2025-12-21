@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工作室网站</title>
+    <title>数字媒体应用解决方案 - 连接科技与行业创新</title>
+    <!-- 注意：使用本地图标，避免外部链接 -->
+    <style>
+        /* 基本图标字体，避免使用外部CDN */
+        @font-face {
+            font-family: 'IconFont';
+            src: url('data:font/woff2;base64,/* 简化的图标字体，避免外部依赖 */') format('woff2');
+        }
+        
+        .icon {
+            font-family: 'IconFont', sans-serif;
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome 图标库（可选） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
     <header>
         <nav>
+            <div class="logo">
+                <span class="icon">◇</span>
+                <span>数媒科技</span>
+            </div>
             <ul>
                 <li><a href="#home">首页</a></li>
                 <li><a href="#projects">行业项目</a></li>
@@ -21,188 +35,155 @@
         </nav>
     </header>
 
-    <!-- 动态首页 -->
+    <!-- 首页 -->
     <section id="home" class="dynamic-home">
         <div class="hero-content">
-            <h1>展示工作室的专业能力与创新案例</h1>
-            <p>我们提供高端的视频制作、数字媒体项目、交互项目等服务。</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn-primary">查看项目</a>
-                <a href="#contact" class="btn-secondary">联系我们</a>
-            </div>
+            <h1>数字媒体技术应用解决方案</h1>
+            <p>为医疗健康、城市规划、文旅文博、工业制造、展会零售及VR游戏等行业提供专业的三维动画、VR/AR、数字孪生等高端数媒技术服务</p>
+            <a href="#projects" class="btn">探索行业应用</a>
         </div>
     </section>
 
-    <!-- 医疗行业 -->
-<div class="project-item">
-    <div class="project-img">
-        <img src="images/medical.jpg" alt="医疗行业">
-    </div>
-    <h3>医疗行业</h3>
-    <p>专业的医疗健康解决方案</p>
-    <a href="#medical" class="view-more" data-section="medical">点击查看详情 <i class="fas fa-arrow-right"></i></a>
-</div>
-
-<!-- 政府与大型企业 -->
-<div class="project-item">
-    <div class="project-img">
-        <img src="images/government.jpg" alt="政府与大型企业">
-    </div>
-    <h3>政府与大型企业</h3>
-    <p>政府与企业数字化解决方案</p>
-    <a href="#government" class="view-more" data-section="government">点击查看详情 <i class="fas fa-arrow-right"></i></a>
-</div>
-
-<!-- 文旅文博 -->
-<div class="project-item">
-    <div class="project-img">
-        <img src="images/tourism.jpg" alt="文旅文博">
-    </div>
-    <h3>文旅文博</h3>
-    <p>文化旅游与文博创新项目</p>
-    <a href="#tourism" class="view-more" data-section="tourism">点击查看详情 <i class="fas fa-arrow-right"></i></a>
-</div>
-
-<!-- VR游戏开发 -->
-<div class="project-item">
-    <div class="project-img">
-        <img src="images/vr-gaming.jpg" alt="VR游戏开发">
-    </div>
-    <h3>VR游戏开发</h3>
-    <p>沉浸式虚拟现实体验</p>
-    <a href="#vr-gaming" class="view-more" data-section="vr-gaming">点击查看详情 <i class="fas fa-arrow-right"></i></a>
-</div>
-
-<!-- 工业与制造 -->
-<div class="project-item">
-    <div class="project-img">
-        <img src="images/industrial.jpg" alt="工业与制造">
-    </div>
-    <h3>工业与制造</h3>
-    <p>工业4.0与智能制造方案</p>
-    <a href="#industrial" class="view-more" data-section="industrial">点击查看详情 <i class="fas fa-arrow-right"></i></a>
-</div>
-
-<!-- 展会、产品、零售 -->
-<div class="project-item">
-    <div class="project-img">
-        <img src="images/retail.jpg" alt="展会、产品、零售">
-    </div>
-    <h3>展会、产品、零售</h3>
-    <p>零售与展会营销解决方案</p>
-    <a href="#retail" class="view-more" data-section="retail">点击查看详情 <i class="fas fa-arrow-right"></i></a>
-</div>
+    <!-- 行业项目 -->
+    <section id="projects" class="projects">
+        <h2>行业项目</h2>
+        <p class="section-desc">我们为不同行业提供定制化的数字媒体技术解决方案，解决行业核心痛点，创造卓越价值</p>
+        
+        <div class="projects-grid">
+            <!-- 医疗健康 -->
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images/medical.jpg" alt="医疗健康" onerror="this.style.display='none'">
+                </div>
+                <h3>医疗健康</h3>
+                <p>专业的医疗健康解决方案</p>
+                <button class="view-detail" data-sector="medical">查看详情</button>
+                <div class="video-note">预留视频位置 (4个)</div>
+            </div>
+            
+            <!-- 政府与大型企业 -->
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images/government.jpg" alt="政府与大型企业" onerror="this.style.display='none'">
+                </div>
+                <h3>政府与大型企业</h3>
+                <p>让规划"看得见"，让汇报"听得懂"</p>
+                <button class="view-detail" data-sector="government">查看详情</button>
+                <div class="video-note">预留视频位置 (3个)</div>
+            </div>
+            
+            <!-- 文旅文博 -->
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images/tourism.jpg" alt="文旅文博" onerror="this.style.display='none'">
+                </div>
+                <h3>文旅文博</h3>
+                <p>让文物"活"起来，让体验"沉"进去</p>
+                <button class="view-detail" data-sector="tourism">查看详情</button>
+                <div class="video-note">预留视频位置 (3个)</div>
+            </div>
+            
+            <!-- 工业与制造 -->
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images/industrial.jpg" alt="工业与制造" onerror="this.style.display='none'">
+                </div>
                 <h3>工业与制造</h3>
-                <p>工业4.0与智能制造方案</p>
-                <a href="#industrial" class="view-more" data-section="industrial">点击查看详情 <i class="fas fa-arrow-right"></i></a>
+                <p>从"制造"到"智造"的视觉引擎</p>
+                <button class="view-detail" data-sector="industrial">查看详情</button>
+                <div class="video-note">预留视频位置 (2个)</div>
             </div>
             
             <!-- 展会、产品、零售 -->
             <div class="project-item">
                 <div class="project-img">
-                    <img src="images/retail.jpg" alt="展会、产品、零售" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/E91E63/ffffff?text=零售'">
+                    <img src="images/retail.jpg" alt="展会、产品、零售" onerror="this.style.display='none'">
                 </div>
                 <h3>展会、产品、零售</h3>
-                <p>零售与展会营销解决方案</p>
-                <a href="#retail" class="view-more" data-section="retail">点击查看详情 <i class="fas fa-arrow-right"></i></a>
+                <p>极致的视觉体验抢夺消费者注意力</p>
+                <button class="view-detail" data-sector="retail">查看详情</button>
+                <div class="video-note">预留视频位置 (2个)</div>
+            </div>
+            
+            <!-- VR游戏开发 -->
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="images/vr-gaming.jpg" alt="VR游戏开发" onerror="this.style.display='none'">
+                </div>
+                <h3>VR游戏开发</h3>
+                <p>高品质视觉内容与沉浸式交互体验相结合</p>
+                <button class="view-detail" data-sector="vr-gaming">查看详情</button>
+                <div class="video-note">预留视频位置 (1个)</div>
             </div>
         </div>
     </section>
 
     <!-- 特色板块 -->
     <section id="features" class="features">
-        <div class="section-header">
-            <h2>特色板块</h2>
-            <p>我们的核心优势与特色服务</p>
-        </div>
+        <h2>特色板块</h2>
+        <p class="section-desc">我们的核心优势与特色服务</p>
+        
         <div class="features-grid">
-            <!-- 运营推广案例 -->
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>运营推广案例</h3>
-                <p>展示我们的运营推广成功案例与策略</p>
-                <a href="#operation" class="view-feature" data-section="operation">查看案例 <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
             <!-- 高端与亲民结合 -->
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
+                <div class="feature-icon">🎯</div>
                 <h3>高端与亲民结合</h3>
                 <p>高端设计与亲民体验的完美融合</p>
-                <a href="#premium" class="view-feature" data-section="premium">查看详情 <i class="fas fa-arrow-right"></i></a>
+                <button class="view-feature-detail" data-feature="premium">查看详情</button>
             </div>
             
             <!-- AI+赋能创新 -->
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
+                <div class="feature-icon">🤖</div>
                 <h3>AI+赋能创新</h3>
                 <p>AI技术驱动的创新解决方案</p>
-                <a href="#ai" class="view-feature" data-section="ai">查看案例 <i class="fas fa-arrow-right"></i></a>
+                <button class="view-feature-detail" data-feature="ai">查看详情</button>
+                <div class="video-note">预留位置 (3个)</div>
             </div>
             
             <!-- 案例总汇 -->
             <div class="feature-item">
-                <div class="feature-icon">
-                    <i class="fas fa-folder-open"></i>
-                </div>
+                <div class="feature-icon">📁</div>
                 <h3>案例总汇</h3>
                 <p>浏览我们所有的成功案例与项目</p>
-                <a href="#all-cases" class="view-feature" data-section="all-cases">查看全部 <i class="fas fa-arrow-right"></i></a>
+                <button class="view-feature-detail" data-feature="cases">查看详情</button>
             </div>
         </div>
     </section>
 
     <!-- 联系我们 -->
     <section id="contact" class="contact">
-        <div class="section-header">
-            <h2>联系我们</h2>
-            <p>欢迎与我们合作，共创美好未来</p>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <h4>邮箱</h4>
-                    <p>contact@example.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <h4>电话</h4>
-                    <p>+86 138-0000-0000</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h4>地址</h4>
-                    <p>北京市某某区某某路123号</p>
-                </div>
+        <h2>联系我们</h2>
+        <p>欢迎与我们合作，共创美好未来</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <h4>邮箱</h4>
+                <p>contact@example.com</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <h4>电话</h4>
+                <p>+86 138-0000-0000</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <h4>地址</h4>
+                <p>北京市某某区某某路123号</p>
             </div>
         </div>
     </section>
 
     <!-- 页脚 -->
     <footer>
-        <div class="footer-content">
-            <p>© 2025 工作室名称 - 版权所有</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
+        <p>© 2025 数媒科技有限公司 - 版权所有</p>
     </footer>
 
     <!-- 详情弹窗 -->
-    <div id="detail-overlay" class="detail-overlay">
-        <div class="detail-content">
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <div id="detail-section">
+            <div id="modal-body">
                 <!-- 内容将通过JavaScript动态加载 -->
             </div>
         </div>
@@ -211,216 +192,320 @@
     <!-- JavaScript -->
     <script>
         // 详情内容数据
-        const detailContent = {
-            // 行业项目
+        const sectorDetails = {
             'medical': {
-                title: '医疗行业',
+                title: '医疗健康',
                 content: `
-                    <h2>医疗行业解决方案</h2>
-                    <p>111</p>
-                    <p>这里可以添加医疗行业项目的详细描述，包括：</p>
-                    <ul>
-                        <li>医疗健康应用开发</li>
-                        <li>医疗数据可视化</li>
-                        <li>远程医疗解决方案</li>
-                        <li>医疗设备交互设计</li>
-                    </ul>
+                    <h3>医疗健康行业应用场景及案例</h3>
+                    <p class="highlight">解决医疗健康领域"诊疗过程不直观、技能培训高风险、复杂知识难沟通、患者管理低效"的核心痛点。实现诊疗精准化、培训安全化、沟通直观化、管理智能化。</p>
+                    
+                    <div class="medical-columns">
+                        <div class="column">
+                            <h4>1. 医院临床与患者服务</h4>
+                            <p><strong>应用形式：</strong>三维动画、VR数媒治疗、数字人助手、手术模拟</p>
+                            <p><strong>应用场景：</strong>医患沟通、VR心理治疗、数字人预问诊、个性化术前规划</p>
+                            <p><strong>应用价值：</strong>提升患者知情度与就医体验，提高诊疗效率与手术精准度</p>
+                        </div>
+                        
+                        <div class="column">
+                            <h4>2. 医学教育与技能培训</h4>
+                            <p><strong>应用形式：</strong>VR沉浸式解剖、高仿真手术模拟器、急诊模拟演练</p>
+                            <p><strong>应用场景：</strong>虚拟解剖、手术练习、重症应急演练</p>
+                            <p><strong>应用价值：</strong>解决"尸体资源稀缺、实操高风险"的矛盾，实现安全、可重复的培训</p>
+                        </div>
+                        
+                        <div class="column">
+                            <h4>3. 医疗器械与药品营销</h4>
+                            <p><strong>应用形式：</strong>产品原理动画、手术流程演示、AR互动手册</p>
+                            <p><strong>应用场景：</strong>产品演示、药品机理可视化、手术流程培训</p>
+                            <p><strong>应用价值：</strong>提升产品理解度，增强客户信任，提高培训效率</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <h4>案例视频 (预留4个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">视频1：医患沟通案例</div>
+                            <div class="video-slot">视频2：VR手术演示</div>
+                            <div class="video-slot">视频3：医学教育案例</div>
+                            <div class="video-slot">视频4：药品展示案例</div>
+                        </div>
+                    </div>
                 `
             },
             'government': {
                 title: '政府与大型企业',
                 content: `
-                    <h2>政府与大型企业解决方案</h2>
-                    <p>222</p>
-                    <p>这里可以添加政府与大型企业项目的详细描述，包括：</p>
-                    <ul>
-                        <li>政府数字化转型</li>
-                        <li>企业管理系统开发</li>
-                        <li>数据安全与隐私保护</li>
-                        <li>智慧城市解决方案</li>
-                    </ul>
+                    <h3>政府与大型企业</h3>
+                    <p class="highlight">让规划"看得见"，让汇报"听得懂"，助力决策与公众沟通。</p>
+                    
+                    <div class="detail-list">
+                        <h4>主要应用方向：</h4>
+                        <ul>
+                            <li><strong>城市规划与招商推介：</strong>三维动画宣传片、数字沙盘，动态展示未来城市面貌</li>
+                            <li><strong>重大工程可视化汇报：</strong>施工动画、BIM可视化，清晰演示复杂工程工艺</li>
+                            <li><strong>宣传科普与应急预案：</strong>动画视频普及法规知识，VR仿真进行灾害模拟推演</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <h4>案例视频 (预留3个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">视频1：城市规划展示</div>
+                            <div class="video-slot">视频2：工程项目汇报</div>
+                            <div class="video-slot">视频3：应急演练模拟</div>
+                        </div>
+                    </div>
                 `
             },
             'tourism': {
                 title: '文旅文博',
                 content: `
-                    <h2>文旅文博解决方案</h2>
-                    <p>333</p>
-                    <p>这里可以添加文旅文博项目的详细描述，包括：</p>
-                    <ul>
-                        <li>文化遗产数字化展示</li>
-                        <li>旅游景区互动体验</li>
-                        <li>博物馆虚拟导览</li>
-                        <li>文化创意产品开发</li>
-                    </ul>
-                `
-            },
-            'vr-gaming': {
-                title: 'VR游戏开发',
-                content: `
-                    <h2>VR游戏开发解决方案</h2>
-                    <p>444</p>
-                    <p>这里可以添加VR游戏开发项目的详细描述，包括：</p>
-                    <ul>
-                        <li>沉浸式VR游戏开发</li>
-                        <li>虚拟现实体验设计</li>
-                        <li>AR互动应用开发</li>
-                        <li>游戏化学习解决方案</li>
-                    </ul>
+                    <h3>文旅文博行业</h3>
+                    <p class="highlight">让文物"活"起来，让体验"沉"进去，实现文化资产的活化与变现。</p>
+                    
+                    <div class="detail-list">
+                        <h4>主要应用方向：</h4>
+                        <ul>
+                            <li><strong>文物复原与数字展陈：</strong>高清三维建模、AR互动，360度观赏珍贵文物</li>
+                            <li><strong>沉浸式历史穿越体验：</strong>VR时空穿越项目、沉浸式展厅，身临其境感受古代场景</li>
+                            <li><strong>智能导览与数字文创：</strong>数字人导游，文物IP裸眼3D视频、数字藏品</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <h4>案例视频 (预留3个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">视频1：文物数字复原</div>
+                            <div class="video-slot">视频2：VR历史体验</div>
+                            <div class="video-slot">视频3：数字文创展示</div>
+                        </div>
+                    </div>
                 `
             },
             'industrial': {
                 title: '工业与制造',
                 content: `
-                    <h2>工业与制造解决方案</h2>
-                    <p>555</p>
-                    <p>这里可以添加工业与制造项目的详细描述，包括：</p>
-                    <ul>
-                        <li>工业4.0智能工厂</li>
-                        <li>制造过程可视化</li>
-                        <li>设备维护与监控系统</li>
-                        <li>供应链管理系统</li>
-                    </ul>
+                    <h3>工业与制造行业</h3>
+                    <p class="highlight">从"制造"到"智造"的视觉引擎，实现降本增效和营销升级。</p>
+                    
+                    <div class="detail-list">
+                        <h4>主要应用方向：</h4>
+                        <ul>
+                            <li><strong>营销与售后支持：</strong>工作原理动画，AR远程维修指导</li>
+                            <li><strong>智能工厂与数字孪生：</strong>生产线数字孪生体，三维可视化生产状态</li>
+                            <li><strong>安全与操作培训：</strong>VR模拟高危设备操作，实现"零风险"安全培训</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <h4>案例视频 (预留2个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">视频1：设备工作原理展示</div>
+                            <div class="video-slot">视频2：工厂数字孪生系统</div>
+                        </div>
+                    </div>
                 `
             },
             'retail': {
                 title: '展会、产品、零售',
                 content: `
-                    <h2>展会、产品、零售解决方案</h2>
-                    <p>666</p>
-                    <p>这里可以添加展会、产品、零售项目的详细描述，包括：</p>
-                    <ul>
-                        <li>虚拟展会平台开发</li>
-                        <li>产品3D展示</li>
-                        <li>零售门店数字化</li>
-                        <li>电商解决方案</li>
-                    </ul>
+                    <h3>展会、产品发布与零售</h3>
+                    <p class="highlight">以极致视觉体验抢夺注意力，打造品牌记忆点，促进销售转化。</p>
+                    
+                    <div class="detail-list">
+                        <h4>主要应用方向：</h4>
+                        <ul>
+                            <li><strong>展台互动与引流：</strong>AR互动、全息投影，成为展馆流量中心</li>
+                            <li><strong>产品发布与零售体验：</strong>裸眼3D视频、MR混合现实演示，震撼发布新品</li>
+                            <li><strong>零售终端体验升级：</strong>VR虚拟试装、AI数字人导购，提升购物便捷度</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <h4>案例视频 (预留2个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">视频1：展会AR互动案例</div>
+                            <div class="video-slot">视频2：产品发布3D展示</div>
+                        </div>
+                    </div>
                 `
             },
-            // 特色板块
-            'operation': {
-                title: '运营推广案例',
+            'vr-gaming': {
+                title: 'VR游戏开发',
                 content: `
-                    <h2>运营推广案例</h2>
-                    <p>777</p>
-                    <p>这里展示我们的运营推广成功案例，包括：</p>
-                    <ul>
-                        <li>社交媒体营销活动</li>
-                        <li>内容营销策略</li>
-                        <li>用户增长案例</li>
-                        <li>品牌推广成果</li>
-                    </ul>
+                    <h3>VR/AR内容与游戏定制开发</h3>
+                    <p class="highlight">提供专业的VR/AR产品研发与内容定制服务，将高品质视觉与沉浸式交互相结合。</p>
+                    
+                    <div class="detail-list">
+                        <h4>服务内容：</h4>
+                        <ul>
+                            <li><strong>UE引擎场景开发与优化：</strong>构建高沉浸感VR场景</li>
+                            <li><strong>3D美术与角色全流程制作：</strong>从原画到模型的全套美术生产</li>
+                            <li><strong>VR交互设计与程序实现：</strong>设计符合人体工学的直觉交互方案</li>
+                            <li><strong>服务模式：</strong>完整游戏开发、内容模块定制、联合开发与技术支持</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="video-placeholder">
+                        <h4>案例视频 (预留1个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">VR游戏展示视频</div>
+                        </div>
+                    </div>
                 `
-            },
+            }
+        };
+
+        // 特色板块详情
+        const featureDetails = {
             'premium': {
                 title: '高端与亲民结合',
                 content: `
-                    <h2>高端与亲民结合</h2>
-                    <p>888</p>
-                    <p>我们擅长将高端设计与亲民体验完美融合，包括：</p>
-                    <ul>
-                        <li>高端品牌形象设计</li>
-                        <li>亲民用户体验优化</li>
-                        <li>跨层级产品策略</li>
-                        <li>多元化用户服务</li>
-                    </ul>
+                    <h3>高端与亲民结合</h3>
+                    <p class="highlight">我们擅长将高端设计与亲民体验完美融合，打造既有视觉震撼力又易于使用的数字媒体解决方案。</p>
+                    
+                    <div class="detail-list">
+                        <h4>核心理念：</h4>
+                        <ul>
+                            <li><strong>高端视觉表现：</strong>运用行业领先的三维动画、虚拟现实技术，呈现电影级视觉效果</li>
+                            <li><strong>亲民用户体验：</strong>设计直观易用的交互界面，降低使用门槛，让技术真正服务于用户</li>
+                            <li><strong>场景化适配：</strong>根据不同用户群体和使用场景，定制化调整产品复杂度和交互方式</li>
+                            <li><strong>价值导向设计：</strong>以解决实际问题为核心，避免过度设计，确保每一分投入都产生实际价值</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-list">
+                        <h4>实践案例：</h4>
+                        <ul>
+                            <li>为高端医疗机构设计的手术模拟系统，同时满足专家级精度和医学生学习需求</li>
+                            <li>文旅景区的AR导览应用，既有惊艳的文物复原效果，又有简单直观的操作界面</li>
+                            <li>工业企业的数字孪生系统，既展示复杂的生产数据，又提供清晰的可视化报表</li>
+                        </ul>
+                    </div>
                 `
             },
             'ai': {
                 title: 'AI+赋能创新',
                 content: `
-                    <h2>AI+赋能创新</h2>
-                    <p>999</p>
-                    <p>我们利用AI技术驱动创新，包括：</p>
-                    <ul>
-                        <li>AI内容生成</li>
-                        <li>智能数据分析</li>
-                        <li>机器学习应用</li>
-                        <li>自动化流程优化</li>
-                    </ul>
+                    <h3>AI+赋能创新</h3>
+                    <p class="highlight">我们将持续探索AI技术与数字媒体内容的深度融合，在智能内容生成、个性化体验交互、数据驱动决策等方向加力，为客户创造更大价值。</p>
+                    
+                    <div class="video-placeholder">
+                        <h4>AI赋能案例 (预留3个位置)</h4>
+                        <div class="video-grid">
+                            <div class="video-slot">AI案例1：智能内容生成</div>
+                            <div class="video-slot">AI案例2：个性化交互体验</div>
+                            <div class="video-slot">AI案例3：数据驱动决策</div>
+                        </div>
+                    </div>
                 `
             },
-            'all-cases': {
+            'cases': {
                 title: '案例总汇',
                 content: `
-                    <h2>案例总汇</h2>
-                    <p>000</p>
-                    <p>浏览我们所有的成功案例与项目，包括：</p>
-                    <ul>
-                        <li>行业解决方案案例</li>
-                        <li>客户成功故事</li>
-                        <li>项目成果展示</li>
-                        <li>合作伙伴案例</li>
-                    </ul>
+                    <h3>成功案例总汇</h3>
+                    <p class="highlight">浏览我们所有的成功案例与项目，见证数字媒体技术在各行业的创新应用。</p>
+                    
+                    <div class="case-list">
+                        <h4>典型应用案例 (10个)：</h4>
+                        <ol>
+                            <li><strong>医疗：</strong>数字人医助预问诊系统</li>
+                            <li><strong>医疗：</strong>高仿真腹腔镜手术模拟器</li>
+                            <li><strong>医疗：</strong>药品分子机制3D动画</li>
+                            <li><strong>城市：</strong>未来新城规划数字沙盘</li>
+                            <li><strong>城市：</strong>跨海大桥施工流程仿真动画</li>
+                            <li><strong>文旅：</strong>唐代宫殿VR穿越体验</li>
+                            <li><strong>文旅：</strong>破损瓷器AR互动复原项目</li>
+                            <li><strong>工业：</strong>大型机械设备AR维修指导</li>
+                            <li><strong>工业：</strong>智能工厂数字孪生系统</li>
+                            <li><strong>展会：</strong>裸眼3D新品发布会视频</li>
+                            <li><strong>VR专项：</strong>定制化VR安全教育体验舱</li>
+                        </ol>
+                    </div>
                 `
             }
         };
 
         // 获取DOM元素
-        const viewMoreButtons = document.querySelectorAll('.view-more, .view-feature');
-        const detailOverlay = document.getElementById('detail-overlay');
-        const detailSection = document.getElementById('detail-section');
+        const modal = document.getElementById('detail-modal');
+        const modalBody = document.getElementById('modal-body');
         const closeBtn = document.querySelector('.close-btn');
+        const viewDetailButtons = document.querySelectorAll('.view-detail');
+        const viewFeatureButtons = document.querySelectorAll('.view-feature-detail');
 
-        // 为每个"点击查看"按钮添加点击事件
-        viewMoreButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const section = this.getAttribute('data-section');
-                const content = detailContent[section];
+        // 为行业项目按钮添加点击事件
+        viewDetailButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const sector = this.getAttribute('data-sector');
+                const detail = sectorDetails[sector];
                 
-                if (content) {
-                    detailSection.innerHTML = `
-                        <h1>${content.title}</h1>
-                        ${content.content}
+                if (detail) {
+                    modalBody.innerHTML = `
+                        <h2>${detail.title}</h2>
+                        ${detail.content}
                     `;
-                    detailOverlay.style.display = 'flex';
-                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
                 }
             });
         });
 
-        // 关闭详情弹窗
+        // 为特色板块按钮添加点击事件
+        viewFeatureButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const feature = this.getAttribute('data-feature');
+                const detail = featureDetails[feature];
+                
+                if (detail) {
+                    modalBody.innerHTML = `
+                        <h2>${detail.title}</h2>
+                        ${detail.content}
+                    `;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // 关闭弹窗
         closeBtn.addEventListener('click', function() {
-            detailOverlay.style.display = 'none';
+            modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         });
 
         // 点击弹窗外部关闭
-        detailOverlay.addEventListener('click', function(e) {
-            if (e.target === detailOverlay) {
-                detailOverlay.style.display = 'none';
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
 
         // 按ESC键关闭弹窗
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                detailOverlay.style.display = 'none';
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         });
 
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href').startsWith('#') && 
-                    this.getAttribute('href').length > 1) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
     </script>
 </body>
 </html>
-
