@@ -4,1278 +4,380 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数媒科技 - 数字媒体技术应用解决方案</title>
-    <style>
-        /* ========== 基本样式重置 ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            overflow-x: hidden;
-        }
-        
-        /* ========== 导航栏 ========== */
-        .main-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 5%;
-            height: 70px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .logo-icon {
-            font-size: 28px;
-            color: #3498db;
-        }
-        
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav-item a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            font-size: 16px;
-            position: relative;
-        }
-        
-        .nav-item a:hover {
-            background: #f8f9fa;
-            color: #3498db;
-        }
-        
-        .nav-item a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #3498db, #2980b9);
-            left: 50%;
-            bottom: 0;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        .nav-item a:hover::after {
-            width: 80%;
-        }
-        
-        .contact-btn {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
-        }
-        
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
-            background: linear-gradient(135deg, #2980b9, #1f618d);
-        }
-        
-        /* ========== 首页 ========== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            z-index: 1;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            font-weight: 700;
-        }
-        
-        .hero-content p {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            font-weight: 300;
-            line-height: 1.8;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #4CAF50, #8BC34A);
-            color: white;
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
-            background: linear-gradient(135deg, #43a047, #7cb342);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-3px);
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* ========== 容器和通用标题 ========== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
-            position: relative;
-            font-weight: 700;
-        }
-        
-        h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #3498db, #2980b9);
-            margin: 15px auto 30px;
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-            margin: 30px 0 15px;
-            color: #34495e;
-            font-weight: 600;
-        }
-        
-        h4 {
-            font-size: 1.4rem;
-            margin: 20px 0 10px;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-        
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        /* ========== 行业板块样式 ========== */
-        .industry-section {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 40px;
-            margin-bottom: 40px;
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-        
-        .industry-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-            border-color: #3498db;
-        }
-        
-        .industry-intro {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
-            border-left: 4px solid #3498db;
-            border-radius: 8px;
-            line-height: 1.8;
-            font-weight: 500;
-        }
-        
-        .note {
-            font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            padding: 12px 20px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border-left: 4px solid #e74c3c;
-            font-size: 1.1rem;
-        }
-        
-        .application-category {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 3px solid #3498db;
-            transition: all 0.3s ease;
-        }
-        
-        .application-category:hover {
-            background: #f0f7ff;
-            transform: translateX(5px);
-        }
-        
-        .application-category h4 {
-            color: #2980b9;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .application-category p {
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-        
-        .application-category strong {
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        /* ========== 响应式设计 ========== */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 5%;
-                gap: 15px;
-            }
-            
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .contact-btn {
-                margin-top: 10px;
-            }
-            
-            .hero {
-                padding: 8rem 1.5rem 4rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            h2 {
-                font-size: 2.2rem;
-            }
-            
-            h3 {
-                font-size: 1.6rem;
-            }
-            
-            .industry-section {
-                padding: 25px;
-            }
-            
-            .industry-intro {
-                padding: 15px;
-                font-size: 1.1rem;
-            }
-            
-            .application-category {
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-            
-            .industry-section {
-                padding: 20px;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            h3 {
-                font-size: 1.4rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
     <header class="main-header">
         <nav class="navbar">
             <div class="nav-brand">
-                <span class="logo-icon">◇</span>
+                <span class="logo-icon"><i class="fas fa-cube"></i></span>
                 <span class="logo-text">数媒科技</span>
             </div>
             
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home">首页</a></li>
-                <li class="nav-item"><a href="#industries">行业应用</a></li>
+                <li class="nav-item"><a href="#projects">行业项目</a></li>
                 <li class="nav-item"><a href="#features">特色板块</a></li>
                 <li class="nav-item"><a href="#contact">联系我们</a></li>
             </ul>
             
-            <button class="contact-btn">联系我们</button>
+            <div class="nav-actions">
+                <button class="contact-btn" onclick="scrollToContact()">立即咨询</button>
+                <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </nav>
     </header>
 
     <!-- 首页 -->
     <section id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>数字媒体技术应用解决方案</h1>
-                <p>为医疗健康、城市规划、文旅文博、工业制造、展会零售及VR游戏等行业提供专业的三维动画、VR/AR、数字孪生等高端数媒技术服务</p>
-                <div class="cta-buttons">
-                    <a href="#industries" class="btn btn-primary">探索行业应用</a>
+                <h1 class="hero-title">数字媒体技术应用解决方案</h1>
+                <p class="hero-subtitle">为医疗健康、城市规划、文旅文博、工业制造、展会零售及VR游戏等行业提供专业的三维动画、VR/AR、数字孪生等高端数媒技术服务</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">探索行业应用</a>
                     <a href="#contact" class="btn btn-secondary">联系我们</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 行业应用 -->
-    <section id="industries">
+    <!-- 行业项目 -->
+    <section id="projects" class="projects-section">
         <div class="container">
-            <h2>行业应用</h2>
-            
-            <!-- 医疗健康 -->
-            <div class="industry-section">
-                <h3>医疗健康行业应用场景及案例</h3>
-                <p class="industry-intro">解决医疗健康领域"诊疗过程不直观、技能培训高风险、复杂知识难沟通、患者管理低效"的核心痛点。实现诊疗精准化、培训安全化、沟通直观化、管理智能化。</p>
-                <p class="note">[部分项目需专业医疗人员配合、联合研发]</p>
-                
-                <div class="application-category">
-                    <h4>1. 医院临床与患者服务</h4>
-                    <p><strong>应用形式：</strong>三维动画、VR数媒治疗、数字人助手、手术模拟</p>
-                    <p><strong>应用场景：</strong>医患沟通（疾病机理、手术方案讲解）、VR心理治疗与疼痛管理等、数字人智能预问诊、数字人指引、基于患者数据的个性化术前规划。</p>
-                    <p><strong>应用价值：</strong>提升患者知情度与就医体验，辅助疼痛管理，提高医生诊疗效率与手术精准度，构建和谐医患关系。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>2. 医学教育与技能培训</h4>
-                    <p><strong>应用形式：</strong>VR沉浸式解剖、高仿真手术模拟器、急诊模拟演练</p>
-                    <p><strong>应用场景：</strong>医学生进行虚拟解剖，外科医生在零风险环境下练习腹腔镜等复杂手术操作，医护团队进行重症应急演练、知识培训等。</p>
-                    <p><strong>应用价值：</strong>解决"尸体资源稀缺、实操高风险、不可逆"的矛盾，实现安全、可重复、高效率的标准化培训。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>3. 医疗器械与药品营销</h4>
-                    <p><strong>应用形式：</strong>产品原理动画、手术流程演示、AR互动手册、药品作用机制可视化</p>
-                    <p><strong>应用场景：</strong>在展会、学术会议上动态展示CT、手术机器人等设备的内部结构和工作原理，直观呈现新药在分子层面的靶向作用机制。</p>
-                    <p><strong>应用价值：</strong>将晦涩的技术参数和微观过程变得生动易懂，成为学术推广和市场营销的"硬名片"，助力品牌塑造与客户转化。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>4. 大众健康与康复管理</h4>
-                    <p><strong>应用形式：</strong>VR康复训练、健康科普体验</p>
-                    <p><strong>应用场景：</strong>为中风患者设计游戏化VR康复任务以提升训练趣味性；在体检中心用VR/AR技术震撼展示吸烟危害或体检结果。</p>
-                    <p><strong>应用价值：</strong>创新康复治疗手段，提升患者依从性；强化健康科普效果，助力疾病预防与健康管理。</p>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">行业项目</h2>
+                <p class="section-subtitle">我们专注于多个行业领域，提供专业解决方案</p>
             </div>
             
-            <!-- 政府与大型企业 -->
-            <div class="industry-section">
-                <h3>政府与大型企业应用场景及案例</h3>
-                <p class="industry-intro">让规划"看得见"，让汇报"听得懂"解决政府及大型企业在宏观规划、复杂工程、招商引资中"专业术语晦涩、成果展示不直观、未来愿景难以感知"的核心痛点。</p>
-                
-                <div class="application-category">
-                    <h4>1. 城市规划与招商推介</h4>
-                    <p><strong>应用形式：</strong>三维动画宣传片、数字沙盘、VR漫游</p>
-                    <p><strong>应用场景：</strong>为"新城规划"、"产业园区"制作宏大的三维动画，动态展示未来5-10年的城市面貌、交通物流、产业布局。</p>
-                    <p><strong>应用价值：</strong>在招商会上给投资者最直观的信心，提升项目获批概率，助力土地价格。</p>
+            <div class="projects-grid">
+                <!-- 医疗健康 -->
+                <div class="project-card" data-sector="medical">
+                    <div class="project-image">
+                        <div class="image-placeholder medical-bg">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">医疗健康</h3>
+                        <p class="project-desc">专业的医疗健康解决方案</p>
+                        <div class="project-features">
+                            <span class="feature-tag">三维动画</span>
+                            <span class="feature-tag">VR/AR</span>
+                            <span class="feature-tag">数字孪生</span>
+                        </div>
+                        <button class="project-btn" onclick="openDetailModal('medical')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="application-category">
-                    <h4>2. 重大工程可视化汇报</h4>
-                    <p><strong>应用形式：</strong>工艺流程仿真、施工动画、BIM可视化</p>
-                    <p><strong>应用场景：</strong>用于地铁、桥梁、核电站等超级工程的汇报，用动画清晰演示地下施工法、复杂组装流程，凸显技术实力。</p>
-                    <p><strong>应用价值：</strong>向上级和公众透明化展示项目价值与内容，成为企业技术实力的"硬名片"。</p>
+                <!-- 政府与大型企业 -->
+                <div class="project-card" data-sector="government">
+                    <div class="project-image">
+                        <div class="image-placeholder government-bg">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">政府与大型企业</h3>
+                        <p class="project-desc">让规划"看得见"，让汇报"听得懂"</p>
+                        <div class="project-features">
+                            <span class="feature-tag">数字沙盘</span>
+                            <span class="feature-tag">施工动画</span>
+                            <span class="feature-tag">BIM可视化</span>
+                        </div>
+                        <button class="project-btn" onclick="openDetailModal('government')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="application-category">
-                    <h4>3. 宣传科普</h4>
-                    <p><strong>应用形式：</strong>二维或三维动画宣视频、或触控视频</p>
-                    <p><strong>应用场景：</strong>在地铁、公交等人流量较多的公共场合适用，普及规范、提高规则共识度、引导作用</p>
-                    <p><strong>应用价值：</strong>减少说教成分，有效拉近群众距离，成为无论老少都可以接受的传播媒介</p>
+                <!-- 文旅文博 -->
+                <div class="project-card" data-sector="tourism">
+                    <div class="project-image">
+                        <div class="image-placeholder tourism-bg">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">文旅文博</h3>
+                        <p class="project-desc">让文物"活"起来，让体验"沉"进去</p>
+                        <div class="project-features">
+                            <span class="feature-tag">VR穿越</span>
+                            <span class="feature-tag">AR互动</span>
+                            <span class="feature-tag">数字文创</span>
+                        </div>
+                        <button class="project-btn" onclick="openDetailModal('tourism')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="application-category">
-                    <h4>4. 应急预案模拟推演</h4>
-                    <p><strong>应用形式：</strong>VR仿真、互动视频</p>
-                    <p><strong>应用场景：</strong>模拟洪水、火灾等突发事件，在虚拟环境中进行人员疏散、物资调配的演练。</p>
-                    <p><strong>应用价值：</strong>提升应急响应能力，降低演练成本和宣传教育成本。</p>
-                </div>
-            </div>
-            
-            <!-- 文旅文博 -->
-            <div class="industry-section">
-                <h3>文旅文博应用场景及案例</h3>
-                <p class="industry-intro">让文物"活"起来，让体验"沉"进去。破解传统博物馆和旅游景区"静态陈列、体验单一、文化内涵难以感知"的困境，通过技术实现文化资产的活化与变现。</p>
-                
-                <div class="application-category">
-                    <h4>1. 文物复原与数字展陈</h4>
-                    <p><strong>应用形式：</strong>高清三维建模、AR互动</p>
-                    <p><strong>应用场景：</strong>对珍贵/破损文物进行高精度三维数字化，游客可在屏幕上任意旋转、放大查看细节，甚至通过AR设备"复原"破碎的瓷器。</p>
-                    <p><strong>应用价值：</strong>增加观展趣味性，提供超越实物的观察视角。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>2. 沉浸式历史穿越体验</h4>
-                    <p><strong>应用形式：</strong>VR/AR体验、全景漫游</p>
-                    <p><strong>应用场景：</strong>打造VR时空穿越项目，让游客"回到"宋朝街市、唐代宫殿，与历史人物互动。或利用大型投影打造沉浸式展厅，身临其境感受古画意境。案例：环绕屏，三折等</p>
-                    <p><strong>应用价值：</strong>将文化IP转化为爆款旅游产品，实现门票二次消费，提升吸引力。</p>
+                <!-- 工业与制造 -->
+                <div class="project-card" data-sector="industrial">
+                    <div class="project-image">
+                        <div class="image-placeholder industrial-bg">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">工业与制造</h3>
+                        <p class="project-desc">从"制造"到"智造"的视觉引擎</p>
+                        <div class="project-features">
+                            <span class="feature-tag">虚拟装配</span>
+                            <span class="feature-tag">生产线仿真</span>
+                            <span class="feature-tag">VR培训</span>
+                        </div>
+                        <button class="project-btn" onclick="openDetailModal('industrial')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="application-category">
-                    <h4>3. 智能导览与数字人讲解</h4>
-                    <p><strong>应用形式：</strong>数字人、AI语音</p>
-                    <p><strong>应用场景：</strong>定制历史名人数字人作为虚拟导游，通过手机App扫描文物即可触发动画讲解，或通过AI语音提供个性化路线规划。</p>
-                    <p><strong>应用价值：</strong>提升科技服务档次，满足年轻游客自助式、互动式需求，打造时代前沿"数字化"形象。</p>
+                <!-- 展会、产品、零售 -->
+                <div class="project-card" data-sector="retail">
+                    <div class="project-image">
+                        <div class="image-placeholder retail-bg">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">展会、产品、零售</h3>
+                        <p class="project-desc">极致的视觉体验抢夺消费者注意力</p>
+                        <div class="project-features">
+                            <span class="feature-tag">全息投影</span>
+                            <span class="feature-tag">裸眼3D</span>
+                            <span class="feature-tag">AI导购</span>
+                        </div>
+                        <button class="project-btn" onclick="openDetailModal('retail')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="application-category">
-                    <h4>4. 文创衍生与线上营销</h4>
-                    <p><strong>应用形式：</strong>裸眼3D短视频、数字藏品、IP形象数字化</p>
-                    <p><strong>应用场景：</strong>制作文物IP的裸眼3D视频在社交媒体引爆传播，发行限量版数字藏品进行创新变现，打造专属IP形象提高知名度与用户粘性。</p>
-                    <p><strong>应用价值：</strong>低成本高效营销，开辟数字资产新收入渠道。</p>
-                </div>
-            </div>
-            
-            <!-- VR游戏开发 -->
-            <div class="industry-section">
-                <h3>VR游戏开发业务介绍</h3>
-                <p class="industry-intro">提供专业的VR游戏产品研发与内容定制服务。致力于将高品质的视觉内容与沉浸式交互体验相结合，伴创造有价值的VR游戏产品。</p>
-                
-                <h4>核心业务</h4>
-                
-                <div class="application-category">
-                    <h4>1. UE引擎场景开发与优化</h4>
-                    <p>我们擅长使用Unreal Engine引擎构建高沉浸感的VR场景。从写实环境到风格化世界，我们专注于场景光影、材质与性能的平衡，确保在VR设备上实现稳定流畅的视觉体验。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>2. 3D美术与角色全流程制作</h4>
-                    <p>我们提供从原画设定、高精度三维建模、拓扑优化到PBR材质绘制的完整美术生产管线。能够高效创建符合项目风格要求的角色、场景资产与用户界面，保障内容的高质量标准。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>3. VR交互设计与程序实现</h4>
-                    <p>设计符合人体工学与直觉的VR交互方案。包括自然的运动操控、物体抓取与操作、UI交互等，确保玩法机制在VR环境中运行可靠且有趣。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>4. 游戏系统策划与内容设计</h4>
-                    <p>提供从核心玩法设计、关卡构架到数值平衡的策划支持。我们注重在VR特性下构建有深度的游戏循环与叙事体验，旨在打造"易于上手、富有沉浸感"的内容。</p>
-                </div>
-                
-                <h4>服务模式</h4>
-                <ol>
-                    <li><strong>完整游戏开发：</strong>承接从概念到上线的全流程VR游戏开发。</li>
-                    <li><strong>内容模块定制：</strong>为客户已有的VR项目或平台，提供特定玩法和内容的定制开发。</li>
-                    <li><strong>联合开发与技术支持：</strong>为拥有IP或创意、但需要技术执行的伙伴，提供共同开发与专业的技术实施服务。</li>
-                </ol>
-            </div>
-            
-            <!-- 工业与制造 -->
-            <div class="industry-section">
-                <h3>工业与制造应用场景及案例</h3>
-                <p class="industry-intro">工业与制造板块：从"制造"到"智造"的视觉引擎。赋能工业企业的研发、生产、营销、运维全生命周期，实现降本增效和营销升级。</p>
-                
-                <div class="application-category">
-                    <h4>1. 营销与售后支持</h4>
-                    <p><strong>应用形式：</strong>三维建模、虚拟装配</p>
-                    <p><strong>应用场景：</strong>为复杂仪器设备制作工作原理动画，展示设备精密与权威性；售后人员用AR眼镜扫描设备，即可叠加故障提示和维修步骤。</p>
-                    <p><strong>应用价值：</strong>降低销售沟通成本，提升售后效率，打造高端品牌形象。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>2. 智能工厂与数字孪生</h4>
-                    <p><strong>应用形式：</strong>生产线仿真、数据可视化展示</p>
-                    <p><strong>应用场景：</strong>展示整个工厂的"数字孪生体"，将生产状态、物料流动，三维可视化。用于全况概览，产能优化和瓶颈分析。</p>
-                    <p><strong>应用价值：</strong>实现生产流程的透明化和可视化，后期搭载实时映射技术，可实现智能化管理，是工业4.0的核心。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>3. 安全与操作培训</h4>
-                    <p><strong>应用形式：</strong>VR安全培训</p>
-                    <p><strong>应用场景：</strong>让新员工在VR中模拟操作高危设备、体验违规操作带来的事故后果，如高空坠落、机械伤害。</p>
-                    <p><strong>应用价值：</strong>实现"零风险"的高效培训，深刻强化安全意识。</p>
+                <!-- VR游戏开发 -->
+                <div class="project-card" data-sector="vr-gaming">
+                    <div class="project-image">
+                        <div class="image-placeholder vr-bg">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">VR游戏开发</h3>
+                        <p class="project-desc">高品质视觉内容与沉浸式交互体验相结合</p>
+                        <div class="project-features">
+                            <span class="feature-tag">UE引擎</span>
+                            <span class="feature-tag">3D美术</span>
+                            <span class="feature-tag">交互设计</span>
+                        </div>
+                        <button class="project-btn" onclick="openDetailModal('vr-gaming')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <!-- 特色板块 -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">特色板块</h2>
+                <p class="section-subtitle">我们的核心优势与特色服务</p>
+            </div>
             
-            <!-- 展会、产品发布与零售 -->
-            <div class="industry-section">
-                <h3>展会、产品发布与零售板块应用场景及案例</h3>
-                <p class="industry-intro">极致的视觉体验抢夺消费者注意力，打造品牌记忆点，促进销售转化。</p>
-                
-                <div class="application-category">
-                    <h4>1. 展台互动与引流</h4>
-                    <p><strong>应用形式：</strong>AR互动、全息投影、大型LED创意内容</p>
-                    <p><strong>应用场景：</strong>在展会现场，观众用手机扫描海报，产品模型即可跃然纸上；或通过全息柜展示虚拟概念产品等。</p>
-                    <p><strong>应用价值：</strong>成为整个展馆的流量中心，聚集人气，高效获客。</p>
+            <div class="features-grid">
+                <!-- 高端与亲民结合 -->
+                <div class="feature-card" data-feature="premium">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="feature-title">高端与亲民结合</h3>
+                    <p class="feature-desc">高端设计与亲民体验的完美融合</p>
+                    <button class="feature-btn" onclick="openFeatureModal('premium')">
+                        查看详情 <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
                 
-                <div class="application-category">
-                    <h4>2. 产品发布</h4>
-                    <p><strong>应用形式：</strong>裸眼3D视频、MR混合现实演示</p>
-                    <p><strong>应用场景：</strong>新品发布会时，通过巨型折角屏实现裸眼3D效果，让产品"冲"出屏幕；或让演讲者与虚拟产品进行实时交互。</p>
-                    <p><strong>应用价值：</strong>引人注目，塑造品牌引领创新的高端形象。</p>
+                <!-- AI+赋能创新 -->
+                <div class="feature-card" data-feature="ai">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">AI+赋能创新</h3>
+                    <p class="feature-desc">AI技术驱动的创新解决方案</p>
+                    <button class="feature-btn" onclick="openFeatureModal('ai')">
+                        查看案例 <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
                 
-                <div class="application-category">
-                    <h4>3. 零售终端体验升级</h4>
-                    <p><strong>应用形式：</strong>VR虚拟试装/试驾、AI数字人导购</p>
-                    <p><strong>应用场景：</strong>消费者在商场，通过AR试穿衣服、试戴珠宝；数字人导购提供24小时个性化服务。</p>
-                    <p><strong>应用价值：</strong>提升购物便捷度，降低决策成本，打造商场科技化高端形象。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>4. 大众健康与康复管理</h4>
-                    <p><strong>应用形式：</strong>VR康复训练、健康科普体验</p>
-                    <p><strong>应用场景：</strong>为中风患者设计游戏化VR康复任务以提升训练趣味性；在体检中心用VR/AR技术震撼展示吸烟危害或体检结果。</p>
-                    <p><strong>应用价值：</strong>创新康复治疗手段，提升患者依从性；强化健康科普效果，助力疾病预防与健康管理。</p>
+                <!-- 案例总汇 -->
+                <div class="feature-card" data-feature="cases">
+                    <div class="feature-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3 class="feature-title">案例总汇</h3>
+                    <p class="feature-desc">浏览我们所有的成功案例与项目</p>
+                    <button class="feature-btn" onclick="openFeatureModal('cases')">
+                        查看全部 <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 特色板块 -->
-    <section id="features">
-        <div class="container">
-            <h2>特色板块</h2>
-            
-            <div class="industry-section">
-                <h3>关于整合高端数媒技术与多元化运营推广的双轨业务概念【衍生板块】</h3>
-                <p class="industry-intro">计划构建一种独特的"双轮驱动"商业模式，即将高精度数字媒体内容制作与分层化、精准化的运营推广深度融合，形成"高端定制"与"大众流量"并行发展的双轨战略。该战略旨在针对同一核心数字资产，进行价值的多维度挖掘与受众的全覆盖触达，从而实现品牌价值长效提升与市场流量即时转化的"品效合一"。</p>
-                
-                <p>立志成为连接上游品牌客户与下游内容生态的价值枢纽与可靠伙伴。我们不仅对上游客户的项目效果负责，更深耕对下游内容创作者的赋能与维护，构建健康、可持续的创作生态。</p>
-                
-                <p>以三个核心行业为例，具体阐述这一战略的落地路径：</p>
-                
-                <div class="application-category">
-                    <h4>1. 文博文旅行业：深化品牌内涵与引爆大众声量并举</h4>
-                    <p><strong>高端品牌价值线：</strong>我们致力于为文化机构打造数字化、科技化、系列化的品牌资产。例如，在为博物馆开发数字人讲解员及VR漫游系统后，我们可以以此为基础，策划制作《文物会说话》等高品质微纪录片系列。这些内容将投放于B站、知乎等高知平台，深度解读文物背后的历史脉络与艺术价值。此举核心在于塑造客户"权威、专业、富有文化深度"的高端品牌形象，吸引并沉淀高质量的文化旅游客群，实现品牌资产的长效增值。</p>
-                    <p><strong>亲民流量转化线：</strong>同步，我们将相同的数字内容转化为大众流量引擎。例如，提取项目中最具视觉冲击力的裸眼3D或VR片段，制作成短视频矩阵，联合旅游、探店类达人进行全景式打卡直播，在抖音、小红书等平台策划"打卡最美博物馆"等热点话题与线上挑战赛。其目标是在短期内快速引爆公众关注，显著提升实地客流量与门票收入，实现营销效果的即时转化。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>2. 政府与大型企业（城市规划/工程）：服务于战略决策与公众沟通</h4>
-                    <p><strong>高端品牌价值线：</strong>我们提供的宏大三维宣传片与数字沙盘，首先是面向关键决策者的战略工具。例如，新城规划方案将通过电影级质感的视觉呈现，在高端招商洽谈会或政府汇报会上作为核心展示，旨在以无可辩驳的视觉说服力，助力客户赢得政策审批与重大投资，坚实塑造其"具备卓越远见与强大执行力"的品牌形象。</p>
-                    <p><strong>亲民流量转化线：</strong>与此同时，我们将核心内容进行大众化转译。例如，制作"3分钟看懂未来新城"等通俗短视频，通过民生、房产等领域的地域性KOL进行传播。这旨在向公众清晰、生动地传达发展蓝图，提升项目的社会认知度与公众好感度，构建透明、亲民的治理或企业形象，为项目落地营造良好的舆论环境。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>3. 工业制造与医疗器械行业：影响行业决策与实现市场教育</h4>
-                    <p><strong>高端品牌价值线：</strong>在此领域，我们打造的内容是面向行业的"视觉权威说明书"。例如，为精密医疗器械制作的工作原理动画，将主要用于全球顶尖行业展会、专业学术会议等场景，直接触达专家、医生等决策群体。目标是在专业圈层内建立"技术领先、值得信赖"的权威品牌地位，深度影响采购决策链。</p>
-                    <p><strong>亲民流量转化线：</strong>我们同步执行"技术破圈"计划。将复杂的专业内容，转化为如"揭秘心脏支架如何拯救生命"等趣味科普短视频，联合医学科普达人进行传播。此举不仅能面向潜在终端用户进行高效的市场教育，在公众心智中提前建立品牌认知与信任，还能从需求端间接推动上游采购决策，拓宽品牌影响力边界。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>双向负责的生态赋能者角色</h4>
-                    <p>我们的运营模式超越简单的项目执行，我们定位为双向价值的创造者与守护者。</p>
-                    <p><strong>对上游客户负责：</strong>深入理解客户的行业特性、品牌内核与战略目标，确保从内容创意到推广执行的每一个环节，都严格符合其品牌调性、质量要求与商业诉求。我们不仅是服务提供商，更是客户的品牌守护者，确保每一次传播都能为品牌资产做加法。</p>
-                    <p><strong>对下游达人负责：</strong>深刻理解内容创作者的核心资产是其个人品牌与粉丝信任（即"羽毛"）。因此，我们基于对项目的深度洞察，为达人精准匹配与其形象、专长和粉丝群体高度契合的合作机会，并提供高质量、易发挥的内容脚本与素材支持。我们"爱惜达人的羽毛"，通过共赢的合作帮助其提升价值，而非消耗其信誉，从而建立起长期、稳定、互信的达人合作网络。</p>
-                </div>
-                
-                <div class="application-category">
-                    <h4>战略综述</h4>
-                    <p>"高端定制"与"大众流量"双轨模式，辅以"双向负责"的生态运营理念，构成了我们完整的衍生板块理念。使我们的服务能够在满足客户对品牌高度与市场热度的双重需求的同时，赢得上下游伙伴的长期信任。</p>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- 联系我们 -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2>联系我们</h2>
+            <div class="section-header">
+                <h2 class="section-title">联系我们</h2>
+                <p class="section-subtitle">欢迎与我们合作，共创美好未来</p>
+            </div>
             
-            <div class="industry-section">
-                <div style="text-align: center; padding: 30px;">
-                    <h4 style="margin-bottom: 20px; color: #2c3e50;">欢迎与我们合作，共创美好未来</h4>
-                    <p style="font-size: 1.2rem; margin-bottom: 30px;">请通过以下方式联系我们，我们将尽快与您取得联系</p>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-                        <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
-                            <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;">📧</div>
-                            <h5 style="font-size: 1.2rem; margin-bottom: 10px;">邮箱</h5>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>邮箱</h4>
                             <p>contact@example.com</p>
                         </div>
-                        
-                        <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
-                            <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;">📱</div>
-                            <h5 style="font-size: 1.2rem; margin-bottom: 10px;">电话</h5>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>电话</h4>
                             <p>+86 138-0000-0000</p>
                         </div>
-                        
-                        <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
-                            <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;">📍</div>
-                            <h5 style="font-size: 1.2rem; margin-bottom: 10px;">地址</h5>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>地址</h4>
                             <p>北京市某某区某某路123号</p>
                         </div>
                     </div>
                     
-                    <div style="margin-top: 50px; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%); border-radius: 12px;">
-                        <h5 style="margin-bottom: 15px; color: #2c3e50;">办公时间</h5>
-                        <p>周一至周五：上午9:00 - 下午6:00</p>
-                        <p>周六：上午10:00 - 下午4:00</p>
-                        <p>周日：休息</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>办公时间</h4>
+                            <p>周一至周五: 9:00-18:00</p>
+                        </div>
                     </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="主题" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="您的消息..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 页脚 -->
-    <footer style="background: linear-gradient(135deg, #2c3e50, #34495e); color: white; text-align: center; padding: 40px 0; margin-top: 60px;">
+    <footer class="main-footer">
         <div class="container">
-            <p style="opacity: 0.9; font-size: 1rem; margin: 0; color: #ecf0f1;">© 2025 数媒科技有限公司 - 版权所有</p>
-            <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">数字媒体技术应用解决方案提供商</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-cube"></i></span>
+                        <span class="logo-text">数媒科技</span>
+                    </div>
+                    <p>数字媒体技术应用解决方案提供商</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#projects">行业项目</a></li>
+                        <li><a href="#features">特色板块</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>联系方式</h4>
+                    <p><i class="fas fa-envelope"></i> contact@example.com</p>
+                    <p><i class="fas fa-phone"></i> +86 138-0000-0000</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 数媒科技有限公司 - 版权所有</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-        
-        // 联系按钮点击
-        document.querySelector('.contact-btn').addEventListener('click', function() {
-            document.querySelector('#contact').scrollIntoView({behavior: 'smooth'});
-        });
-        
-        // 页面加载动画
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease-in-out';
-            
-            setTimeout(function() {
-                document.body.style.opacity = '1';
-            }, 100);
-            
-            // 为行业板块添加进场动画
-            const industrySections = document.querySelectorAll('.industry-section');
-            industrySections.forEach((section, index) => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(function() {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, 300 + (index * 100));
-            });
-            
-            // 为联系方式卡片添加动画
-            const contactCards = document.querySelectorAll('#contact .industry-section > div > div > div');
-            contactCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(function() {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 500 + (index * 150));
-            });
-        });
-        
-        // 悬停效果增强
-        document.querySelectorAll('.industry-section').forEach(section => {
-            section.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.12)';
-            });
-            
-            section.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
-            });
-        });
-        
-        // 联系方式卡片悬停效果
-        document.querySelectorAll('#contact .industry-section > div > div > div').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
-            });
-        });
-        
-        // 导航栏当前页面高亮
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-item a');
-        
-        window.addEventListener('scroll', function() {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // 添加上下滚动指示
-        const scrollIndicator = document.createElement('div');
-        scrollIndicator.innerHTML = '↓';
-        scrollIndicator.style.position = 'fixed';
-        scrollIndicator.style.bottom = '20px';
-        scrollIndicator.style.right = '20px';
-        scrollIndicator.style.width = '50px';
-        scrollIndicator.style.height = '50px';
-        scrollIndicator.style.backgroundColor = 'rgba(52, 152, 219, 0.8)';
-        scrollIndicator.style.color = 'white';
-        scrollIndicator.style.borderRadius = '50%';
-        scrollIndicator.style.display = 'flex';
-        scrollIndicator.style.alignItems = 'center';
-        scrollIndicator.style.justifyContent = 'center';
-        scrollIndicator.style.fontSize = '24px';
-        scrollIndicator.style.cursor = 'pointer';
-        scrollIndicator.style.zIndex = '999';
-        scrollIndicator.style.transition = 'all 0.3s ease';
-        scrollIndicator.style.opacity = '0';
-        scrollIndicator.style.visibility = 'hidden';
-        
-        document.body.appendChild(scrollIndicator);
-        
-        // 滚动指示器显示/隐藏
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollIndicator.style.opacity = '1';
-                scrollIndicator.style.visibility = 'visible';
-            } else {
-                scrollIndicator.style.opacity = '0';
-                scrollIndicator.style.visibility = 'hidden';
-            }
-        });
-        
-        // 点击滚动指示器回到顶部
-        scrollIndicator.addEventListener('click', function() {
-            if (window.scrollY > window.innerHeight) {
-                window.scrollTo({top: 0, behavior: 'smooth'});
-                this.innerHTML = '↑';
-            } else {
-                window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-                this.innerHTML = '↓';
-            }
-        });
-        
-        // 更新滚动指示器图标
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > window.innerHeight) {
-                scrollIndicator.innerHTML = '↑';
-            } else {
-                scrollIndicator.innerHTML = '↓';
-            }
-        });
-        
-        // 滚动指示器悬停效果
-        scrollIndicator.addEventListener('mouseenter', function() {
-            this.style.backgroundColor = 'rgba(41, 128, 185, 0.9)';
-            this.style.transform = 'scale(1.1)';
-        });
-        
-        scrollIndicator.addEventListener('mouseleave', function() {
-            this.style.backgroundColor = 'rgba(52, 152, 219, 0.8)';
-            this.style.transform = 'scale(1)';
-        });
-        
-        // 打印按钮
-        const printButton = document.createElement('button');
-        printButton.textContent = '打印页面';
-        printButton.style.position = 'fixed';
-        printButton.style.bottom = '80px';
-        printButton.style.right = '20px';
-        printButton.style.padding = '8px 16px';
-        printButton.style.backgroundColor = '#2ecc71';
-        printButton.style.color = 'white';
-        printButton.style.border = 'none';
-        printButton.style.borderRadius = '4px';
-        printButton.style.cursor = 'pointer';
-        printButton.style.zIndex = '999';
-        printButton.style.opacity = '0.7';
-        printButton.style.transition = 'opacity 0.3s ease';
-        
-        printButton.addEventListener('mouseenter', function() {
-            this.style.opacity = '1';
-        });
-        
-        printButton.addEventListener('mouseleave', function() {
-            this.style.opacity = '0.7';
-        });
-        
-        printButton.addEventListener('click', function() {
-            window.print();
-        });
-        
-        document.body.appendChild(printButton);
-        
-        // 移动端菜单切换
-        const menuToggle = document.createElement('button');
-        menuToggle.innerHTML = '☰';
-        menuToggle.style.display = 'none';
-        menuToggle.style.position = 'absolute';
-        menuToggle.style.right = '20px';
-        menuToggle.style.top = '20px';
-        menuToggle.style.backgroundColor = '#3498db';
-        menuToggle.style.color = 'white';
-        menuToggle.style.border = 'none';
-        menuToggle.style.borderRadius = '4px';
-        menuToggle.style.width = '40px';
-        menuToggle.style.height = '40px';
-        menuToggle.style.fontSize = '20px';
-        menuToggle.style.cursor = 'pointer';
-        menuToggle.style.zIndex = '1001';
-        
-        document.querySelector('.navbar').appendChild(menuToggle);
-        
-        // 移动端菜单切换功能
-        function toggleMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-        }
-        
-        menuToggle.addEventListener('click', toggleMobileMenu);
-        
-        // 移动端检测
-        function checkMobile() {
-            if (window.innerWidth <= 768) {
-                menuToggle.style.display = 'block';
-                document.querySelector('.nav-menu').style.display = 'none';
-                document.querySelector('.nav-menu').style.flexDirection = 'column';
-                document.querySelector('.nav-menu').style.position = 'absolute';
-                document.querySelector('.nav-menu').style.top = '70px';
-                document.querySelector('.nav-menu').style.left = '0';
-                document.querySelector('.nav-menu').style.width = '100%';
-                document.querySelector('.nav-menu').style.backgroundColor = 'white';
-                document.querySelector('.nav-menu').style.padding = '20px';
-                document.querySelector('.nav-menu').style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-            } else {
-                menuToggle.style.display = 'none';
-                document.querySelector('.nav-menu').style.display = 'flex';
-                document.querySelector('.nav-menu').style.flexDirection = 'row';
-                document.querySelector('.nav-menu').style.position = 'static';
-                document.querySelector('.nav-menu').style.width = 'auto';
-                document.querySelector('.nav-menu').style.backgroundColor = 'transparent';
-                document.querySelector('.nav-menu').style.padding = '0';
-                document.querySelector('.nav-menu').style.boxShadow = 'none';
-            }
-        }
-        
-        window.addEventListener('resize', checkMobile);
-        checkMobile();
-        
-        // 移动端点击菜单项关闭菜单
-        document.querySelectorAll('.nav-item a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    document.querySelector('.nav-menu').style.display = 'none';
-                }
-            });
-        });
-        
-        // 页面加载进度条
-        const progressBar = document.createElement('div');
-        progressBar.style.position = 'fixed';
-        progressBar.style.top = '0';
-        progressBar.style.left = '0';
-        progressBar.style.width = '0%';
-        progressBar.style.height = '3px';
-        progressBar.style.backgroundColor = '#3498db';
-        progressBar.style.zIndex = '1002';
-        progressBar.style.transition = 'width 0.3s ease';
-        
-        document.body.appendChild(progressBar);
-        
-        // 模拟加载进度
-        let progress = 0;
-        const progressInterval = setInterval(function() {
-            progress += Math.random() * 20;
-            if (progress > 100) {
-                progress = 100;
-                clearInterval(progressInterval);
-                setTimeout(function() {
-                    progressBar.style.width = '0%';
-                }, 500);
-            }
-            progressBar.style.width = progress + '%';
-        }, 100);
-    </script>
+    <!-- 详情弹窗 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+            </div>
+            <div class="modal-body" id="modalContent">
+                <!-- 内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
 
-    <style>
-        /* 补充的CSS样式 */
-        
-        /* 导航栏当前页面高亮 */
-        .nav-item a.active {
-            color: #3498db;
-            background: #f0f7ff;
-        }
-        
-        .nav-item a.active::after {
-            width: 80%;
-        }
-        
-        /* 联系信息卡片悬停效果 */
-        #contact .industry-section > div > div > div:hover {
-            transform: translateY(-8px) !important;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-        }
-        
-        /* 打印样式 */
-        @media print {
-            .main-header, .contact-btn, .cta-buttons, 
-            #contact .industry-section > div > div > div:hover,
-            .industry-section:hover,
-            .application-category:hover,
-            .nav-item a::after,
-            .btn-primary:hover,
-            .btn-secondary:hover,
-            footer p:last-child,
-            .scroll-indicator,
-            .print-button,
-            .menu-toggle {
-                display: none !important;
-            }
-            
-            .industry-section {
-                break-inside: avoid;
-                box-shadow: none !important;
-                border: 1px solid #ddd !important;
-            }
-            
-            h2::after {
-                background: #333 !important;
-            }
-            
-            .hero {
-                background: #f8f9fa !important;
-                color: #333 !important;
-                min-height: auto !important;
-                padding: 2rem 0 !important;
-            }
-            
-            .hero-content h1 {
-                color: #333 !important;
-                text-shadow: none !important;
-            }
-            
-            .hero-content p {
-                color: #666 !important;
-            }
-            
-            .btn {
-                display: none !important;
-            }
-        }
-        
-        /* 滚动条样式 */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        ::webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            border-radius: 5px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #2980b9, #1f618d);
-        }
-        
-        /* 动画类 */
-        .fade-in {
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .slide-up {
-            animation: slideUp 0.5s ease forwards;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* 响应式设计补充 */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            h3 {
-                font-size: 1.5rem;
-            }
-            
-            .industry-intro {
-                font-size: 1.1rem;
-                padding: 15px;
-            }
-            
-            .application-category h4 {
-                font-size: 1.2rem;
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                padding: 7rem 1rem 3rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-            }
-            
-            section {
-                padding: 40px 0;
-            }
-            
-            .industry-section {
-                padding: 20px 15px;
-            }
-            
-            .application-category {
-                padding: 15px;
-            }
-        }
-        
-        /* 联系信息网格布局优化 */
-        @media (min-width: 768px) {
-            #contact .industry-section > div > div {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-        }
-        
-        /* 页脚样式优化 */
-        footer {
-            background: linear-gradient(135deg, #2c3e50, #34495e) !important;
-        }
-        
-        footer p {
-            color: #ecf0f1 !important;
-        }
-    </style>
+    <!-- 视频弹窗 -->
+    <div id="videoModal" class="modal video-modal">
+        <div class="modal-overlay" onclick="closeVideoModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeVideoModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-player-container">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+            <h3 id="videoTitle"></h3>
+        </div>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
