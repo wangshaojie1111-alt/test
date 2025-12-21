@@ -374,13 +374,6 @@ const sectorDetails = {
                     <p><strong>应用场景：</strong>消费者在商场，通过AR试穿衣服、试戴珠宝；数字人导购提供24小时个性化服务。</p>
                     <p><strong>应用价值：</strong>提升购物便捷度，降低决策成本，打造商场科技化高端形象。</p>
                 </div>
-                
-                <div class="column">
-                    <h4>4. 大众健康与康复管理</h4>
-                    <p><strong>应用形式：</strong>VR康复训练、健康科普体验</p>
-                    <p><strong>应用场景：</strong>为中风患者设计游戏化VR康复任务以提升训练趣味性；在体检中心用VR/AR技术震撼展示吸烟危害或体检结果。</p>
-                    <p><strong>应用价值：</strong>创新康复治疗手段，提升患者依从性；强化健康科普效果，助力疾病预防与健康管理。</p>
-                </div>
             </div>
             
             <div class="video-section">
@@ -744,4 +737,5 @@ function toggleMobileMenu() {
         navMenu.classList.toggle('active');
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
     }
+
 }
