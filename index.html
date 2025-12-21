@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数媒科技 - 数字媒体技术应用解决方案</title>
     <style>
-        /* 全局样式 */
+        /* ========== 基本样式重置 ========== */
         * {
             margin: 0;
             padding: 0;
@@ -17,69 +17,15 @@
         }
         
         body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #3498db, #2980b9);
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-            margin: 30px 0 15px;
-            color: #34495e;
-        }
-        
-        h4 {
-            font-size: 1.4rem;
-            margin: 20px 0 10px;
-            color: #2c3e50;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        /* 导航栏样式 */
-        header {
+        /* ========== 导航栏 ========== */
+        .main-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             position: fixed;
@@ -87,18 +33,20 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
         
-        nav {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 0 5%;
+            height: 70px;
             max-width: 1400px;
             margin: 0 auto;
         }
         
-        .logo {
+        .nav-brand {
             display: flex;
             align-items: center;
             gap: 12px;
@@ -113,45 +61,69 @@
             font-size: 24px;
             font-weight: bold;
             color: #2c3e50;
+            letter-spacing: 0.5px;
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
         }
         
-        .nav-menu a {
+        .nav-item a {
             text-decoration: none;
             color: #2c3e50;
             font-weight: 600;
             padding: 8px 16px;
             border-radius: 6px;
             transition: all 0.3s ease;
+            font-size: 16px;
+            position: relative;
         }
         
-        .nav-menu a:hover {
-            background: #f0f0f0;
+        .nav-item a:hover {
+            background: #f8f9fa;
             color: #3498db;
+        }
+        
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            left: 50%;
+            bottom: 0;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-item a:hover::after {
+            width: 80%;
         }
         
         .contact-btn {
             background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
             border: none;
-            padding: 10px 24px;
-            border-radius: 25px;
+            padding: 12px 28px;
+            border-radius: 6px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 16px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
         }
         
         .contact-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(135deg, #2980b9, #1f618d);
         }
         
-        /* 首页样式 */
+        /* ========== 首页 ========== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -160,23 +132,44 @@
             text-align: center;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 100px 20px 60px;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+            opacity: 0.5;
         }
         
         .hero-content {
             max-width: 900px;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
         }
         
-        .hero h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
         }
         
-        .hero p {
+        .hero-content p {
             font-size: 1.4rem;
             margin-bottom: 2.5rem;
             opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
         }
         
         .cta-buttons {
@@ -194,6 +187,9 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border: none;
         }
         
         .btn-primary {
@@ -205,6 +201,7 @@
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, #43a047, #7cb342);
         }
         
         .btn-secondary {
@@ -219,7 +216,80 @@
             transform: translateY(-3px);
         }
         
-        /* 行业板块样式 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ========== 容器和通用标题 ========== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+            position: relative;
+            font-weight: 700;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            margin: 15px auto 30px;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: #34495e;
+            font-weight: 600;
+        }
+        
+        h4 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        /* ========== 行业板块样式 ========== */
         .industry-section {
             background: white;
             border-radius: 12px;
@@ -227,28 +297,50 @@
             padding: 40px;
             margin-bottom: 40px;
             transition: transform 0.3s ease;
+            border: 1px solid #eee;
         }
         
         .industry-section:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-color: #3498db;
         }
         
         .industry-intro {
             font-size: 1.2rem;
-            color: #555;
+            color: #2c3e50;
             margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
             border-left: 4px solid #3498db;
-            border-radius: 4px;
+            border-radius: 8px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+        
+        .note {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 4px solid #e74c3c;
+            font-size: 1.1rem;
         }
         
         .application-category {
             margin-bottom: 30px;
-            padding: 20px;
+            padding: 25px;
             background: #f8f9fa;
             border-radius: 8px;
+            border-left: 3px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        
+        .application-category:hover {
+            background: #f0f7ff;
+            transform: translateX(5px);
         }
         
         .application-category h4 {
@@ -256,98 +348,124 @@
             border-bottom: 2px solid #3498db;
             padding-bottom: 8px;
             margin-bottom: 15px;
+            font-size: 1.3rem;
         }
         
         .application-category p {
             margin-bottom: 10px;
+            line-height: 1.7;
         }
         
-        .note {
-            font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-            padding: 10px;
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-        
-        /* 特色板块样式 */
-        .feature-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .feature-section h3 {
+        .application-category strong {
             color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
+            font-weight: 600;
         }
         
-        .feature-content {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .feature-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .feature-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-        
-        /* 页脚样式 */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
-        }
-        
-        /* 响应式设计 */
+        /* ========== 响应式设计 ========== */
         @media (max-width: 768px) {
-            .nav-menu {
+            .navbar {
                 flex-direction: column;
-                gap: 10px;
-                display: none;
+                height: auto;
+                padding: 15px 5%;
+                gap: 15px;
             }
             
-            .hero h1 {
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .contact-btn {
+                margin-top: 10px;
+            }
+            
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+            
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
             
-            .hero p {
+            .hero-content p {
                 font-size: 1.2rem;
             }
             
-            .industry-section, .feature-section {
+            section {
+                padding: 60px 0;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            h3 {
+                font-size: 1.6rem;
+            }
+            
+            .industry-section {
+                padding: 25px;
+            }
+            
+            .industry-intro {
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+            
+            .application-category {
                 padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .industry-section {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <header>
-        <nav>
-            <div class="logo">
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
                 <span class="logo-icon">◇</span>
                 <span class="logo-text">数媒科技</span>
             </div>
             
             <ul class="nav-menu">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#industries">行业应用</a></li>
-                <li><a href="#features">特色板块</a></li>
-                <li><a href="#contact">联系我们</a></li>
+                <li class="nav-item"><a href="#home">首页</a></li>
+                <li class="nav-item"><a href="#industries">行业应用</a></li>
+                <li class="nav-item"><a href="#features">特色板块</a></li>
+                <li class="nav-item"><a href="#contact">联系我们</a></li>
             </ul>
             
             <button class="contact-btn">联系我们</button>
@@ -504,12 +622,11 @@
                 </div>
                 
                 <h4>服务模式</h4>
-                    <ol>
-                        <li><strong>完整游戏开发：</strong>承接从概念到上线的全流程VR游戏开发。</li>
-                        <li><strong>内容模块定制：</strong>为客户已有的VR项目或平台，提供特定玩法和内容的定制开发。</li>
-                        <li><strong>联合开发与技术支持：</strong>为拥有IP或创意、但需要技术执行的伙伴，提供共同开发与专业的技术实施服务。</li>
-                    </ol>
-                </div>
+                <ol>
+                    <li><strong>完整游戏开发：</strong>承接从概念到上线的全流程VR游戏开发。</li>
+                    <li><strong>内容模块定制：</strong>为客户已有的VR项目或平台，提供特定玩法和内容的定制开发。</li>
+                    <li><strong>联合开发与技术支持：</strong>为拥有IP或创意、但需要技术执行的伙伴，提供共同开发与专业的技术实施服务。</li>
+                </ol>
             </div>
             
             <!-- 工业与制造 -->
@@ -580,50 +697,46 @@
         <div class="container">
             <h2>特色板块</h2>
             
-            <div class="feature-section">
+            <div class="industry-section">
                 <h3>关于整合高端数媒技术与多元化运营推广的双轨业务概念【衍生板块】</h3>
+                <p class="industry-intro">计划构建一种独特的"双轮驱动"商业模式，即将高精度数字媒体内容制作与分层化、精准化的运营推广深度融合，形成"高端定制"与"大众流量"并行发展的双轨战略。该战略旨在针对同一核心数字资产，进行价值的多维度挖掘与受众的全覆盖触达，从而实现品牌价值长效提升与市场流量即时转化的"品效合一"。</p>
                 
-                <div class="feature-content">
-                    <p>计划构建一种独特的"双轮驱动"商业模式，即将高精度数字媒体内容制作与分层化、精准化的运营推广深度融合，形成"高端定制"与"大众流量"并行发展的双轨战略。该战略旨在针对同一核心数字资产，进行价值的多维度挖掘与受众的全覆盖触达，从而实现品牌价值长效提升与市场流量即时转化的"品效合一"。</p>
-                    
-                    <p>立志成为连接上游品牌客户与下游内容生态的价值枢纽与可靠伙伴。我们不仅对上游客户的项目效果负责，更深耕对下游内容创作者的赋能与维护，构建健康、可持续的创作生态。</p>
-                    
-                    <p>以三个核心行业为例，具体阐述这一战略的落地路径：</p>
-                    
-                    <div class="feature-item">
-                        <h4>1. 文博文旅行业：深化品牌内涵与引爆大众声量并举</h4>
-                        <p><strong>高端品牌价值线：</strong>我们致力于为文化机构打造数字化、科技化、系列化的品牌资产。例如，在为博物馆开发数字人讲解员及VR漫游系统后，我们可以以此为基础，策划制作《文物会说话》等高品质微纪录片系列。这些内容将投放于B站、知乎等高知平台，深度解读文物背后的历史脉络与艺术价值。此举核心在于塑造客户"权威、专业、富有文化深度"的高端品牌形象，吸引并沉淀高质量的文化旅游客群，实现品牌资产的长效增值。</p>
-                        <p><strong>亲民流量转化线：</strong>同步，我们将相同的数字内容转化为大众流量引擎。例如，提取项目中最具视觉冲击力的裸眼3D或VR片段，制作成短视频矩阵，联合旅游、探店类达人进行全景式打卡直播，在抖音、小红书等平台策划"打卡最美博物馆"等热点话题与线上挑战赛。其目标是在短期内快速引爆公众关注，显著提升实地客流量与门票收入，实现营销效果的即时转化。</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <h4>2. 政府与大型企业（城市规划/工程）：服务于战略决策与公众沟通</h4>
-                        <p><strong>高端品牌价值线：</strong>我们提供的宏大三维宣传片与数字沙盘，首先是面向关键决策者的战略工具。例如，新城规划方案将通过电影级质感的视觉呈现，在高端招商洽谈会或政府汇报会上作为核心展示，旨在以无可辩驳的视觉说服力，助力客户赢得政策审批与重大投资，坚实塑造其"具备卓越远见与强大执行力"的品牌形象。</p>
-                        <p><strong>亲民流量转化线：</strong>与此同时，我们将核心内容进行大众化转译。例如，制作"3分钟看懂未来新城"等通俗短视频，通过民生、房产等领域的地域性KOL进行传播。这旨在向公众清晰、生动地传达发展蓝图，提升项目的社会认知度与公众好感度，构建透明、亲民的治理或企业形象，为项目落地营造良好的舆论环境。</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <h4>3. 工业制造与医疗器械行业：影响行业决策与实现市场教育</h4>
-                        <p><strong>高端品牌价值线：</strong>在此领域，我们打造的内容是面向行业的"视觉权威说明书"。例如，为精密医疗器械制作的工作原理动画，将主要用于全球顶尖行业展会、专业学术会议等场景，直接触达专家、医生等决策群体。目标是在专业圈层内建立"技术领先、值得信赖"的权威品牌地位，深度影响采购决策链。</p>
-                        <p><strong>亲民流量转化线：</strong>我们同步执行"技术破圈"计划。将复杂的专业内容，转化为如"揭秘心脏支架如何拯救生命"等趣味科普短视频，联合医学科普达人进行传播。此举不仅能面向潜在终端用户进行高效的市场教育，在公众心智中提前建立品牌认知与信任，还能从需求端间接推动上游采购决策，拓宽品牌影响力边界。</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <h4>双向负责的生态赋能者角色</h4>
-                        <p>我们的运营模式超越简单的项目执行，我们定位为双向价值的创造者与守护者。</p>
-                        <p><strong>对上游客户负责：</strong>深入理解客户的行业特性、品牌内核与战略目标，确保从内容创意到推广执行的每一个环节，都严格符合其品牌调性、质量要求与商业诉求。我们不仅是服务提供商，更是客户的品牌守护者，确保每一次传播都能为品牌资产做加法。</p>
-                        <p><strong>对下游达人负责：</strong>深刻理解内容创作者的核心资产是其个人品牌与粉丝信任（即"羽毛"）。因此，我们基于对项目的深度洞察，为达人精准匹配与其形象、专长和粉丝群体高度契合的合作机会，并提供高质量、易发挥的内容脚本与素材支持。我们"爱惜达人的羽毛"，通过共赢的合作帮助其提升价值，而非消耗其信誉，从而建立起长期、稳定、互信的达人合作网络。</p>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <h4>战略综述</h4>
-                        <p>"高端定制"与"大众流量"双轨模式，辅以"双向负责"的生态运营理念，构成了我们完整的衍生板块理念。使我们的服务能够在满足客户对品牌高度与市场热度的双重需求的同时，赢得上下游伙伴的长期信任。</p>
-                    </div>
+                <p>立志成为连接上游品牌客户与下游内容生态的价值枢纽与可靠伙伴。我们不仅对上游客户的项目效果负责，更深耕对下游内容创作者的赋能与维护，构建健康、可持续的创作生态。</p>
+                
+                <p>以三个核心行业为例，具体阐述这一战略的落地路径：</p>
+                
+                <div class="application-category">
+                    <h4>1. 文博文旅行业：深化品牌内涵与引爆大众声量并举</h4>
+                    <p><strong>高端品牌价值线：</strong>我们致力于为文化机构打造数字化、科技化、系列化的品牌资产。例如，在为博物馆开发数字人讲解员及VR漫游系统后，我们可以以此为基础，策划制作《文物会说话》等高品质微纪录片系列。这些内容将投放于B站、知乎等高知平台，深度解读文物背后的历史脉络与艺术价值。此举核心在于塑造客户"权威、专业、富有文化深度"的高端品牌形象，吸引并沉淀高质量的文化旅游客群，实现品牌资产的长效增值。</p>
+                    <p><strong>亲民流量转化线：</strong>同步，我们将相同的数字内容转化为大众流量引擎。例如，提取项目中最具视觉冲击力的裸眼3D或VR片段，制作成短视频矩阵，联合旅游、探店类达人进行全景式打卡直播，在抖音、小红书等平台策划"打卡最美博物馆"等热点话题与线上挑战赛。其目标是在短期内快速引爆公众关注，显著提升实地客流量与门票收入，实现营销效果的即时转化。</p>
+                </div>
+                
+                <div class="application-category">
+                    <h4>2. 政府与大型企业（城市规划/工程）：服务于战略决策与公众沟通</h4>
+                    <p><strong>高端品牌价值线：</strong>我们提供的宏大三维宣传片与数字沙盘，首先是面向关键决策者的战略工具。例如，新城规划方案将通过电影级质感的视觉呈现，在高端招商洽谈会或政府汇报会上作为核心展示，旨在以无可辩驳的视觉说服力，助力客户赢得政策审批与重大投资，坚实塑造其"具备卓越远见与强大执行力"的品牌形象。</p>
+                    <p><strong>亲民流量转化线：</strong>与此同时，我们将核心内容进行大众化转译。例如，制作"3分钟看懂未来新城"等通俗短视频，通过民生、房产等领域的地域性KOL进行传播。这旨在向公众清晰、生动地传达发展蓝图，提升项目的社会认知度与公众好感度，构建透明、亲民的治理或企业形象，为项目落地营造良好的舆论环境。</p>
+                </div>
+                
+                <div class="application-category">
+                    <h4>3. 工业制造与医疗器械行业：影响行业决策与实现市场教育</h4>
+                    <p><strong>高端品牌价值线：</strong>在此领域，我们打造的内容是面向行业的"视觉权威说明书"。例如，为精密医疗器械制作的工作原理动画，将主要用于全球顶尖行业展会、专业学术会议等场景，直接触达专家、医生等决策群体。目标是在专业圈层内建立"技术领先、值得信赖"的权威品牌地位，深度影响采购决策链。</p>
+                    <p><strong>亲民流量转化线：</strong>我们同步执行"技术破圈"计划。将复杂的专业内容，转化为如"揭秘心脏支架如何拯救生命"等趣味科普短视频，联合医学科普达人进行传播。此举不仅能面向潜在终端用户进行高效的市场教育，在公众心智中提前建立品牌认知与信任，还能从需求端间接推动上游采购决策，拓宽品牌影响力边界。</p>
+                </div>
+                
+                <div class="application-category">
+                    <h4>双向负责的生态赋能者角色</h4>
+                    <p>我们的运营模式超越简单的项目执行，我们定位为双向价值的创造者与守护者。</p>
+                    <p><strong>对上游客户负责：</strong>深入理解客户的行业特性、品牌内核与战略目标，确保从内容创意到推广执行的每一个环节，都严格符合其品牌调性、质量要求与商业诉求。我们不仅是服务提供商，更是客户的品牌守护者，确保每一次传播都能为品牌资产做加法。</p>
+                    <p><strong>对下游达人负责：</strong>深刻理解内容创作者的核心资产是其个人品牌与粉丝信任（即"羽毛"）。因此，我们基于对项目的深度洞察，为达人精准匹配与其形象、专长和粉丝群体高度契合的合作机会，并提供高质量、易发挥的内容脚本与素材支持。我们"爱惜达人的羽毛"，通过共赢的合作帮助其提升价值，而非消耗其信誉，从而建立起长期、稳定、互信的达人合作网络。</p>
+                </div>
+                
+                <div class="application-category">
+                    <h4>战略综述</h4>
+                    <p>"高端定制"与"大众流量"双轨模式，辅以"双向负责"的生态运营理念，构成了我们完整的衍生板块理念。使我们的服务能够在满足客户对品牌高度与市场热度的双重需求的同时，赢得上下游伙伴的长期信任。</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- 联系我们 -->
     <section id="contact">
         <div class="container">
@@ -635,23 +748,30 @@
                     <p style="font-size: 1.2rem; margin-bottom: 30px;">请通过以下方式联系我们，我们将尽快与您取得联系</p>
                     
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-                        <div style="text-align: center;">
+                        <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
                             <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;">📧</div>
                             <h5 style="font-size: 1.2rem; margin-bottom: 10px;">邮箱</h5>
                             <p>contact@example.com</p>
                         </div>
                         
-                        <div style="text-align: center;">
+                        <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
                             <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;">📱</div>
                             <h5 style="font-size: 1.2rem; margin-bottom: 10px;">电话</h5>
                             <p>+86 138-0000-0000</p>
                         </div>
                         
-                        <div style="text-align: center;">
+                        <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
                             <div style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;">📍</div>
                             <h5 style="font-size: 1.2rem; margin-bottom: 10px;">地址</h5>
                             <p>北京市某某区某某路123号</p>
                         </div>
+                    </div>
+                    
+                    <div style="margin-top: 50px; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%); border-radius: 12px;">
+                        <h5 style="margin-bottom: 15px; color: #2c3e50;">办公时间</h5>
+                        <p>周一至周五：上午9:00 - 下午6:00</p>
+                        <p>周六：上午10:00 - 下午4:00</p>
+                        <p>周日：休息</p>
                     </div>
                 </div>
             </div>
@@ -659,9 +779,10 @@
     </section>
 
     <!-- 页脚 -->
-    <footer>
+    <footer style="background: linear-gradient(135deg, #2c3e50, #34495e); color: white; text-align: center; padding: 40px 0; margin-top: 60px;">
         <div class="container">
-            <p style="margin: 0; opacity: 0.9;">© 2025 数媒科技有限公司 - 版权所有</p>
+            <p style="opacity: 0.9; font-size: 1rem; margin: 0; color: #ecf0f1;">© 2025 数媒科技有限公司 - 版权所有</p>
+            <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">数字媒体技术应用解决方案提供商</p>
         </div>
     </footer>
 
@@ -685,7 +806,7 @@
         
         // 导航栏滚动效果
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
+            const header = document.querySelector('.main-header');
             if (window.scrollY > 100) {
                 header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
                 header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
@@ -720,7 +841,441 @@
                     section.style.transform = 'translateY(0)';
                 }, 300 + (index * 100));
             });
+            
+            // 为联系方式卡片添加动画
+            const contactCards = document.querySelectorAll('#contact .industry-section > div > div > div');
+            contactCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(function() {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 500 + (index * 150));
+            });
         });
+        
+        // 悬停效果增强
+        document.querySelectorAll('.industry-section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.12)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+            });
+        });
+        
+        // 联系方式卡片悬停效果
+        document.querySelectorAll('#contact .industry-section > div > div > div').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+            });
+        });
+        
+        // 导航栏当前页面高亮
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-item a');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // 添加上下滚动指示
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.innerHTML = '↓';
+        scrollIndicator.style.position = 'fixed';
+        scrollIndicator.style.bottom = '20px';
+        scrollIndicator.style.right = '20px';
+        scrollIndicator.style.width = '50px';
+        scrollIndicator.style.height = '50px';
+        scrollIndicator.style.backgroundColor = 'rgba(52, 152, 219, 0.8)';
+        scrollIndicator.style.color = 'white';
+        scrollIndicator.style.borderRadius = '50%';
+        scrollIndicator.style.display = 'flex';
+        scrollIndicator.style.alignItems = 'center';
+        scrollIndicator.style.justifyContent = 'center';
+        scrollIndicator.style.fontSize = '24px';
+        scrollIndicator.style.cursor = 'pointer';
+        scrollIndicator.style.zIndex = '999';
+        scrollIndicator.style.transition = 'all 0.3s ease';
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.visibility = 'hidden';
+        
+        document.body.appendChild(scrollIndicator);
+        
+        // 滚动指示器显示/隐藏
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.visibility = 'visible';
+            } else {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.visibility = 'hidden';
+            }
+        });
+        
+        // 点击滚动指示器回到顶部
+        scrollIndicator.addEventListener('click', function() {
+            if (window.scrollY > window.innerHeight) {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+                this.innerHTML = '↑';
+            } else {
+                window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+                this.innerHTML = '↓';
+            }
+        });
+        
+        // 更新滚动指示器图标
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > window.innerHeight) {
+                scrollIndicator.innerHTML = '↑';
+            } else {
+                scrollIndicator.innerHTML = '↓';
+            }
+        });
+        
+        // 滚动指示器悬停效果
+        scrollIndicator.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'rgba(41, 128, 185, 0.9)';
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        scrollIndicator.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'rgba(52, 152, 219, 0.8)';
+            this.style.transform = 'scale(1)';
+        });
+        
+        // 打印按钮
+        const printButton = document.createElement('button');
+        printButton.textContent = '打印页面';
+        printButton.style.position = 'fixed';
+        printButton.style.bottom = '80px';
+        printButton.style.right = '20px';
+        printButton.style.padding = '8px 16px';
+        printButton.style.backgroundColor = '#2ecc71';
+        printButton.style.color = 'white';
+        printButton.style.border = 'none';
+        printButton.style.borderRadius = '4px';
+        printButton.style.cursor = 'pointer';
+        printButton.style.zIndex = '999';
+        printButton.style.opacity = '0.7';
+        printButton.style.transition = 'opacity 0.3s ease';
+        
+        printButton.addEventListener('mouseenter', function() {
+            this.style.opacity = '1';
+        });
+        
+        printButton.addEventListener('mouseleave', function() {
+            this.style.opacity = '0.7';
+        });
+        
+        printButton.addEventListener('click', function() {
+            window.print();
+        });
+        
+        document.body.appendChild(printButton);
+        
+        // 移动端菜单切换
+        const menuToggle = document.createElement('button');
+        menuToggle.innerHTML = '☰';
+        menuToggle.style.display = 'none';
+        menuToggle.style.position = 'absolute';
+        menuToggle.style.right = '20px';
+        menuToggle.style.top = '20px';
+        menuToggle.style.backgroundColor = '#3498db';
+        menuToggle.style.color = 'white';
+        menuToggle.style.border = 'none';
+        menuToggle.style.borderRadius = '4px';
+        menuToggle.style.width = '40px';
+        menuToggle.style.height = '40px';
+        menuToggle.style.fontSize = '20px';
+        menuToggle.style.cursor = 'pointer';
+        menuToggle.style.zIndex = '1001';
+        
+        document.querySelector('.navbar').appendChild(menuToggle);
+        
+        // 移动端菜单切换功能
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+        
+        menuToggle.addEventListener('click', toggleMobileMenu);
+        
+        // 移动端检测
+        function checkMobile() {
+            if (window.innerWidth <= 768) {
+                menuToggle.style.display = 'block';
+                document.querySelector('.nav-menu').style.display = 'none';
+                document.querySelector('.nav-menu').style.flexDirection = 'column';
+                document.querySelector('.nav-menu').style.position = 'absolute';
+                document.querySelector('.nav-menu').style.top = '70px';
+                document.querySelector('.nav-menu').style.left = '0';
+                document.querySelector('.nav-menu').style.width = '100%';
+                document.querySelector('.nav-menu').style.backgroundColor = 'white';
+                document.querySelector('.nav-menu').style.padding = '20px';
+                document.querySelector('.nav-menu').style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            } else {
+                menuToggle.style.display = 'none';
+                document.querySelector('.nav-menu').style.display = 'flex';
+                document.querySelector('.nav-menu').style.flexDirection = 'row';
+                document.querySelector('.nav-menu').style.position = 'static';
+                document.querySelector('.nav-menu').style.width = 'auto';
+                document.querySelector('.nav-menu').style.backgroundColor = 'transparent';
+                document.querySelector('.nav-menu').style.padding = '0';
+                document.querySelector('.nav-menu').style.boxShadow = 'none';
+            }
+        }
+        
+        window.addEventListener('resize', checkMobile);
+        checkMobile();
+        
+        // 移动端点击菜单项关闭菜单
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-menu').style.display = 'none';
+                }
+            });
+        });
+        
+        // 页面加载进度条
+        const progressBar = document.createElement('div');
+        progressBar.style.position = 'fixed';
+        progressBar.style.top = '0';
+        progressBar.style.left = '0';
+        progressBar.style.width = '0%';
+        progressBar.style.height = '3px';
+        progressBar.style.backgroundColor = '#3498db';
+        progressBar.style.zIndex = '1002';
+        progressBar.style.transition = 'width 0.3s ease';
+        
+        document.body.appendChild(progressBar);
+        
+        // 模拟加载进度
+        let progress = 0;
+        const progressInterval = setInterval(function() {
+            progress += Math.random() * 20;
+            if (progress > 100) {
+                progress = 100;
+                clearInterval(progressInterval);
+                setTimeout(function() {
+                    progressBar.style.width = '0%';
+                }, 500);
+            }
+            progressBar.style.width = progress + '%';
+        }, 100);
     </script>
+
+    <style>
+        /* 补充的CSS样式 */
+        
+        /* 导航栏当前页面高亮 */
+        .nav-item a.active {
+            color: #3498db;
+            background: #f0f7ff;
+        }
+        
+        .nav-item a.active::after {
+            width: 80%;
+        }
+        
+        /* 联系信息卡片悬停效果 */
+        #contact .industry-section > div > div > div:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* 打印样式 */
+        @media print {
+            .main-header, .contact-btn, .cta-buttons, 
+            #contact .industry-section > div > div > div:hover,
+            .industry-section:hover,
+            .application-category:hover,
+            .nav-item a::after,
+            .btn-primary:hover,
+            .btn-secondary:hover,
+            footer p:last-child,
+            .scroll-indicator,
+            .print-button,
+            .menu-toggle {
+                display: none !important;
+            }
+            
+            .industry-section {
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+            
+            h2::after {
+                background: #333 !important;
+            }
+            
+            .hero {
+                background: #f8f9fa !important;
+                color: #333 !important;
+                min-height: auto !important;
+                padding: 2rem 0 !important;
+            }
+            
+            .hero-content h1 {
+                color: #333 !important;
+                text-shadow: none !important;
+            }
+            
+            .hero-content p {
+                color: #666 !important;
+            }
+            
+            .btn {
+                display: none !important;
+            }
+        }
+        
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #2980b9, #1f618d);
+        }
+        
+        /* 动画类 */
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .slide-up {
+            animation: slideUp 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 响应式设计补充 */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .industry-intro {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            
+            .application-category h4 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 7rem 1rem 3rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .industry-section {
+                padding: 20px 15px;
+            }
+            
+            .application-category {
+                padding: 15px;
+            }
+        }
+        
+        /* 联系信息网格布局优化 */
+        @media (min-width: 768px) {
+            #contact .industry-section > div > div {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+        
+        /* 页脚样式优化 */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e) !important;
+        }
+        
+        footer p {
+            color: #ecf0f1 !important;
+        }
+    </style>
 </body>
 </html>
