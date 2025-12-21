@@ -16,12 +16,6 @@ body {
     background-color: #f8f9fa;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* ========== 导航栏 ========== */
 header {
     background-color: #fff;
@@ -51,12 +45,15 @@ nav {
 
 .logo .icon {
     font-size: 1.8rem;
+    color: #3498db;
 }
 
 nav ul {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
@@ -171,6 +168,7 @@ nav ul li a:hover::after {
     transition: transform 0.3s ease;
     border: 1px solid #eee;
     padding-bottom: 1.5rem;
+    text-align: center;
 }
 
 .project-item:hover {
@@ -182,6 +180,10 @@ nav ul li a:hover::after {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-img img {
@@ -199,6 +201,7 @@ nav ul li a:hover::after {
     padding: 1.5rem 1.5rem 0.5rem;
     font-size: 1.3rem;
     color: #333;
+    margin: 0;
 }
 
 .project-item p {
@@ -206,6 +209,7 @@ nav ul li a:hover::after {
     color: #666;
     margin-bottom: 1rem;
     min-height: 60px;
+    font-size: 1rem;
 }
 
 .view-detail {
@@ -220,6 +224,7 @@ nav ul li a:hover::after {
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.3s;
+    font-size: 1rem;
 }
 
 .view-detail:hover {
@@ -236,12 +241,14 @@ nav ul li a:hover::after {
     background-color: #f9f9f9;
     border-radius: 5px;
     margin: 0 1.5rem;
+    border: 1px dashed #ddd;
 }
 
 /* ========== 特色板块 ========== */
 .features {
     padding: 5rem 2rem;
     background-color: #f8f9fa;
+    border-top: 2px solid #eee;
 }
 
 .features h2 {
@@ -266,6 +273,7 @@ nav ul li a:hover::after {
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    border: 1px solid #eee;
 }
 
 .feature-item:hover {
@@ -276,6 +284,7 @@ nav ul li a:hover::after {
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    display: block;
 }
 
 .feature-item h3 {
@@ -288,6 +297,7 @@ nav ul li a:hover::after {
     color: #666;
     margin-bottom: 1.5rem;
     min-height: 60px;
+    font-size: 1rem;
 }
 
 .view-feature-detail {
@@ -300,6 +310,9 @@ nav ul li a:hover::after {
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.3s;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
 }
 
 .view-feature-detail:hover {
@@ -311,6 +324,7 @@ nav ul li a:hover::after {
     padding: 5rem 2rem;
     background-color: white;
     text-align: center;
+    border-top: 2px solid #eee;
 }
 
 .contact h2 {
@@ -319,20 +333,12 @@ nav ul li a:hover::after {
     color: #333;
 }
 
-.contact > p {
-    color: #666;
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 3rem auto 0;
 }
 
 .contact-item {
@@ -340,15 +346,18 @@ nav ul li a:hover::after {
     background: #f8f9fa;
     border-radius: 10px;
     transition: transform 0.3s ease;
+    border: 1px solid #eee;
 }
 
 .contact-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    display: block;
 }
 
 .contact-item h4 {
@@ -359,6 +368,7 @@ nav ul li a:hover::after {
 
 .contact-item p {
     color: #666;
+    font-size: 1rem;
 }
 
 /* ========== 页脚 ========== */
@@ -372,6 +382,8 @@ footer {
 
 footer p {
     opacity: 0.8;
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* ========== 弹窗样式 ========== */
@@ -385,7 +397,7 @@ footer p {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 2000;
     overflow-y: auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
 }
 
 .modal-content {
@@ -420,6 +432,15 @@ footer p {
     cursor: pointer;
     color: #999;
     transition: color 0.3s;
+    background: none;
+    border: none;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-btn:hover {
@@ -431,11 +452,13 @@ footer p {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid #3498db;
+    font-size: 2rem;
 }
 
 #modal-body h3 {
     color: #333;
     margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
 }
 
 #modal-body .highlight {
@@ -445,6 +468,7 @@ footer p {
     border-radius: 5px;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .medical-columns {
@@ -464,6 +488,13 @@ footer p {
 .column h4 {
     color: #2c3e50;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.column p {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    font-size: 1rem;
 }
 
 .detail-list {
@@ -473,6 +504,7 @@ footer p {
 .detail-list h4 {
     color: #2c3e50;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .detail-list ul, .detail-list ol {
@@ -483,6 +515,7 @@ footer p {
 .detail-list li {
     margin-bottom: 0.8rem;
     line-height: 1.5;
+    font-size: 1rem;
 }
 
 .video-placeholder {
@@ -497,6 +530,7 @@ footer p {
     color: #333;
     margin-bottom: 1rem;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .video-grid {
@@ -513,6 +547,7 @@ footer p {
     color: #666;
     font-weight: 500;
     border: 1px solid #ddd;
+    font-size: 1rem;
 }
 
 .case-list ol {
@@ -522,6 +557,8 @@ footer p {
 .case-list li {
     margin-bottom: 1rem;
     padding-left: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* ========== 响应式设计 ========== */
@@ -529,10 +566,10 @@ footer p {
     nav {
         flex-direction: column;
         padding: 1rem;
+        gap: 1rem;
     }
     
     nav ul {
-        margin-top: 1rem;
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
@@ -565,9 +602,14 @@ footer p {
     .modal-content {
         padding: 1.5rem;
         width: 95%;
+        margin: 1rem auto;
     }
     
     .medical-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -581,7 +623,7 @@ footer p {
         font-size: 1.3rem;
     }
     
-    .video-grid {
+    .contact-info {
         grid-template-columns: 1fr;
     }
 }
