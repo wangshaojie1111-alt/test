@@ -4,17 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数字媒体应用解决方案 - 连接科技与行业创新</title>
-    <!-- 注意：使用本地图标，避免外部链接 -->
     <style>
-        /* 基本图标字体，避免使用外部CDN */
-        @font-face {
-            font-family: 'IconFont';
-            src: url('data:font/woff2;base64,/* 简化的图标字体，避免外部依赖 */') format('woff2');
-        }
-        
-        .icon {
-            font-family: 'IconFont', sans-serif;
-        }
+        /* 内联基本字体图标，避免外部依赖 */
+        .icon { font-family: Arial; }
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -58,7 +50,7 @@
                 <h3>医疗健康</h3>
                 <p>专业的医疗健康解决方案</p>
                 <button class="view-detail" data-sector="medical">查看详情</button>
-                <div class="video-note">预留视频位置 (4个)</div>
+                <div class="video-note">预留视频位置(4个)</div>
             </div>
             
             <!-- 政府与大型企业 -->
@@ -69,7 +61,7 @@
                 <h3>政府与大型企业</h3>
                 <p>让规划"看得见"，让汇报"听得懂"</p>
                 <button class="view-detail" data-sector="government">查看详情</button>
-                <div class="video-note">预留视频位置 (3个)</div>
+                <div class="video-note">预留视频位置(3个)</div>
             </div>
             
             <!-- 文旅文博 -->
@@ -80,7 +72,7 @@
                 <h3>文旅文博</h3>
                 <p>让文物"活"起来，让体验"沉"进去</p>
                 <button class="view-detail" data-sector="tourism">查看详情</button>
-                <div class="video-note">预留视频位置 (3个)</div>
+                <div class="video-note">预留视频位置(3个)</div>
             </div>
             
             <!-- 工业与制造 -->
@@ -91,7 +83,7 @@
                 <h3>工业与制造</h3>
                 <p>从"制造"到"智造"的视觉引擎</p>
                 <button class="view-detail" data-sector="industrial">查看详情</button>
-                <div class="video-note">预留视频位置 (2个)</div>
+                <div class="video-note">预留视频位置(2个)</div>
             </div>
             
             <!-- 展会、产品、零售 -->
@@ -102,7 +94,7 @@
                 <h3>展会、产品、零售</h3>
                 <p>极致的视觉体验抢夺消费者注意力</p>
                 <button class="view-detail" data-sector="retail">查看详情</button>
-                <div class="video-note">预留视频位置 (2个)</div>
+                <div class="video-note">预留视频位置(2个)</div>
             </div>
             
             <!-- VR游戏开发 -->
@@ -113,7 +105,7 @@
                 <h3>VR游戏开发</h3>
                 <p>高品质视觉内容与沉浸式交互体验相结合</p>
                 <button class="view-detail" data-sector="vr-gaming">查看详情</button>
-                <div class="video-note">预留视频位置 (1个)</div>
+                <div class="video-note">预留视频位置(1个)</div>
             </div>
         </div>
     </section>
@@ -137,8 +129,7 @@
                 <div class="feature-icon">🤖</div>
                 <h3>AI+赋能创新</h3>
                 <p>AI技术驱动的创新解决方案</p>
-                <button class="view-feature-detail" data-feature="ai">查看详情</button>
-                <div class="video-note">预留位置 (3个)</div>
+                <button class="view-feature-detail" data-feature="ai">预留位置(3个)</button>
             </div>
             
             <!-- 案例总汇 -->
@@ -146,7 +137,7 @@
                 <div class="feature-icon">📁</div>
                 <h3>案例总汇</h3>
                 <p>浏览我们所有的成功案例与项目</p>
-                <button class="view-feature-detail" data-feature="cases">查看详情</button>
+                <button class="view-feature-detail" data-feature="cases">查看更多</button>
             </div>
         </div>
     </section>
@@ -154,7 +145,7 @@
     <!-- 联系我们 -->
     <section id="contact" class="contact">
         <h2>联系我们</h2>
-        <p>欢迎与我们合作，共创美好未来</p>
+        <p class="section-desc">欢迎与我们合作，共创美好未来</p>
         <div class="contact-info">
             <div class="contact-item">
                 <div class="contact-icon">📧</div>
@@ -189,7 +180,6 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
         // 详情内容数据
         const sectorDetails = {
@@ -374,15 +364,6 @@
                             <li><strong>价值导向设计：</strong>以解决实际问题为核心，避免过度设计，确保每一分投入都产生实际价值</li>
                         </ul>
                     </div>
-                    
-                    <div class="detail-list">
-                        <h4>实践案例：</h4>
-                        <ul>
-                            <li>为高端医疗机构设计的手术模拟系统，同时满足专家级精度和医学生学习需求</li>
-                            <li>文旅景区的AR导览应用，既有惊艳的文物复原效果，又有简单直观的操作界面</li>
-                            <li>工业企业的数字孪生系统，既展示复杂的生产数据，又提供清晰的可视化报表</li>
-                        </ul>
-                    </div>
                 `
             },
             'ai': {
@@ -427,85 +408,83 @@
             }
         };
 
-        // 获取DOM元素
+        // DOM元素
         const modal = document.getElementById('detail-modal');
         const modalBody = document.getElementById('modal-body');
         const closeBtn = document.querySelector('.close-btn');
         const viewDetailButtons = document.querySelectorAll('.view-detail');
         const viewFeatureButtons = document.querySelectorAll('.view-feature-detail');
 
-        // 为行业项目按钮添加点击事件
-        viewDetailButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const sector = this.getAttribute('data-sector');
-                const detail = sectorDetails[sector];
-                
-                if (detail) {
-                    modalBody.innerHTML = `
-                        <h2>${detail.title}</h2>
-                        ${detail.content}
-                    `;
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
+        // 初始化 - 绑定事件
+        document.addEventListener('DOMContentLoaded', function() {
+            // 绑定行业项目详情按钮
+            viewDetailButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const sector = this.getAttribute('data-sector');
+                    showDetail(sector, sectorDetails[sector]);
+                });
+            });
+
+            // 绑定特色板块详情按钮
+            viewFeatureButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const feature = this.getAttribute('data-feature');
+                    showDetail(feature, featureDetails[feature]);
+                });
+            });
+
+            // 关闭弹窗
+            closeBtn.addEventListener('click', closeModal);
+
+            // 点击弹窗外关闭
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
                 }
+            });
+
+            // 按ESC键关闭弹窗
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+
+            // 平滑滚动导航
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
         });
 
-        // 为特色板块按钮添加点击事件
-        viewFeatureButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const feature = this.getAttribute('data-feature');
-                const detail = featureDetails[feature];
-                
-                if (detail) {
-                    modalBody.innerHTML = `
-                        <h2>${detail.title}</h2>
-                        ${detail.content}
-                    `;
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
+        // 显示详情弹窗
+        function showDetail(id, detail) {
+            if (!detail) return;
+            
+            modalBody.innerHTML = `
+                <h2>${detail.title}</h2>
+                ${detail.content}
+            `;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
         // 关闭弹窗
-        closeBtn.addEventListener('click', function() {
+        function closeModal() {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
-        });
-
-        // 点击弹窗外部关闭
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // 按ESC键关闭弹窗
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        }
     </script>
 </body>
 </html>
