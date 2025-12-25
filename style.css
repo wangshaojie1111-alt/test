@@ -97,7 +97,7 @@ body {
 
 /* ========== 导航栏 ========== */
 .main-header {
-    background: rgba(255, 255, 255, 0.95);
+    background: #2c3e50; 
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -142,6 +142,38 @@ body {
     gap: 40px;
     margin: 0;
     padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;  /* 改为白色 */
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;  /* 改为白色 */
+    left: 50%;
+    bottom: 0;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+    width: 80%;
 }
 
 .nav-item a {
@@ -870,12 +902,24 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background: white;
+        background: #2c3e50;
         flex-direction: column;
         gap: 0;
         padding: 20px 0;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
+
+    .nav-menu a {
+    color: white;  /* 改为白色 */
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-menu.active {
+    display: flex;
+}
     
     .nav-menu.active {
         display: flex;
@@ -941,5 +985,6 @@ body {
 .logo-text {
     color: white;
 }
+
 
 
