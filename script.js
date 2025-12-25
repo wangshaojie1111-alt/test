@@ -59,14 +59,6 @@ function initScrollToTop() {
     }
 }
 
-// 滚动到联系部分
-function scrollToContact() {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
 // 滚动到顶部
 function scrollToTop() {
     window.scrollTo({
@@ -739,3 +731,4 @@ function toggleMobileMenu() {
     }
 
 }
+
