@@ -263,6 +263,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     animation: fadeInUp 1s ease 0.4s both;
+    justify-content: center; 
 }
 
 @keyframes fadeInUp {
@@ -936,3 +937,4 @@ body {
     }
 
 }
+
