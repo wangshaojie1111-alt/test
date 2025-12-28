@@ -912,24 +912,26 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 87, 34, 0.9);
+    width: 40px;  /* 调整为更小的尺寸，适合50%缩略图 */
+    height: 40px;  /* 调整为更小的尺寸，适合50%缩略图 */
+    background: rgba(255, 87, 34, 0.85);  /* 稍微调整透明度，使更明显 */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.3rem;  /* 调整字体大小 */
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
-    opacity: 0;
-    z-index: 2;
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+    opacity: 1;  /* 修改这里：始终显示 */
+    z-index: 10;  /* 提高层级 */
+    pointer-events: none;  /* 避免干扰点击事件 */
 }
 
 .video-thumb:hover .play-overlay {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.15);  /* 悬停时稍微放大 */
+    background: rgba(255, 87, 34, 1);  /* 悬停时完全不透明 */
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
 }
 
 /* ========== 响应式设计 ========== */
@@ -1051,3 +1053,44 @@ body {
     }
 }
 
+/* ========== 修复播放按钮显示问题 ========== */
+
+/* 确保所有播放按钮始终可见 */
+.play-overlay {
+    opacity: 1 !important;  /* 始终显示 */
+    z-index: 10;  /* 提高层级，防止被覆盖 */
+    pointer-events: none;  /* 防止干扰点击事件 */
+}
+
+/* 针对弹窗内的播放按钮 */
+#detailModal .play-overlay,
+.modal-content .play-overlay {
+    opacity: 1 !important;
+    display: flex !important;
+    visibility: visible !important;
+}
+
+/* 悬停效果 */
+.video-thumb:hover .play-overlay,
+#detailModal .video-thumb:hover .play-overlay,
+.modal-content .video-thumb:hover .play-overlay {
+    transform: translate(-50%, -50%) scale(1.15);
+    background: rgba(255, 87, 34, 1);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
+}
+
+/* 确保缩略图容器有正确的层级 */
+.thumb-img {
+    position: relative;
+    z-index: 1;
+}
+
+/* 确保播放按钮在图片上方 */
+.thumb-img img {
+    position: absolute;
+    z-index: 1;
+}
+
+.thumb-img .play-overlay {
+    z-index: 2;  /* 播放按钮在图片上方 */
+}
