@@ -144,28 +144,24 @@ const sectorDetails = {
                     <div class="video-thumb" data-video="videos/yl-2-1.mp4" data-title="中医抗疫">
                         <div class="thumb-img">
                             <img src="images/yl-2-1.png" alt="中医抗疫">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>中医抗疫</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-2.mp4" data-title="智慧医院物流传输系统">
                         <div class="thumb-img">
                             <img src="images/yl-2-2.png" alt="智慧医院物流传输系统">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>智慧医院物流传输系统</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="VR治疗系统">
                         
                             <img src="images/yl-2-3.png" alt="VR治疗系统">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>VR治疗系统</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-4.mp4" data-title="儿童医院裸眼3D宣传">
                         
                             <img src="images/yl-2-4.png" alt="儿童医院裸眼3D宣传">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>儿童医院裸眼3D宣传</p>
                     </div>
@@ -215,21 +211,18 @@ const sectorDetails = {
                     <div class="video-thumb" data-video="videos/zf-2-1.mp4" data-title="杭州新城">
                         
                             <img src="images/zf-2-1.png" alt="杭州新城">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>杭州新城</p>
                     </div>
                     <div class="video-thumb" data-video="videos/zf-2-2.mp4" data-title="全息数据">
                         
                             <img src="images/zf-2-2.png" alt="全息数据">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>全息数据</p>
                     </div>
                     <div class="video-thumb" data-video="videos/zf-2-3.mp4" data-title="盘锦智慧体系">
                         
                             <img src="images/zf-2-3.png" alt="盘锦智慧体系">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>盘锦智慧体系</p>
                     </div>
@@ -279,21 +272,18 @@ const sectorDetails = {
                     <div class="video-thumb" data-video="videos/wl-2-1.mp4" data-title="《观音的故事》">
                         
                             <img src="images/wl-2-1.png" alt="《观音的故事》">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>《观音的故事》</p>
                     </div>
                     <div class="video-thumb" data-video="videos/wl-2-2.mp4" data-title="《汝瓷》">
                         
                             <img src="images/wl-2-2.png" alt="《汝瓷》">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>《汝瓷》</p>
                     </div>
                     <div class="video-thumb" data-video="videos/wl-2-3.mp4" data-title="《稷下学宫》">
                         
                             <img src="images/wl-2-3.png" alt="《稷下学宫》">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>《稷下学宫》</p>
                     </div>
@@ -336,14 +326,12 @@ const sectorDetails = {
                     <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
                         
                             <img src="images/gy-2-1.png" alt="设备工作原理展示">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>设备工作原理展示</p>
                     </div>
                     <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="数据机房展示">
                         
                             <img src="images/gy-2-2.png" alt="数据机房展示">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>数据机房展示</p>
                     </div>
@@ -386,14 +374,12 @@ const sectorDetails = {
                     <div class="video-thumb" data-video="videos/zl-2-1.mp4" data-title="展会裸眼3D案例">
                         
                             <img src="images/zl-2-1.png" alt="展会裸眼3D案例">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>展会裸眼3D案例</p>
                     </div>
                     <div class="video-thumb" data-video="videos/zl-2-2.mp4" data-title="维益裸眼3D">
                         
                             <img src="images/zl-2-2.png" alt="维益裸眼3D">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>维益裸眼3D</p>
                     </div>
@@ -443,7 +429,6 @@ const sectorDetails = {
                     <div class="video-thumb" data-video="videos/vr-2-1.mp4" data-title="VR游戏展示视频">
                         
                             <img src="images/vr-2-1.png" alt="VR游戏展示视频">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>VR游戏展示视频</p>
                     </div>
@@ -508,21 +493,18 @@ const featureDetails = {
                     <div class="video-thumb" data-video="videos/ai-2-1.mp4" data-title="AI案例1：智能内容生成">
                         
                             <img src="images/ai-2-1.png" alt="AI案例1：智能内容生成">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>AI案例1：智能内容生成</p>
                     </div>
                     <div class="video-thumb" data-video="videos/ai-2-2.mp4" data-title="AI案例2：个性化交互体验">
                         
                             <img src="images/ai-2-2.png" alt="AI案例2：个性化交互体验">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>AI案例2：个性化交互体验</p>
                     </div>
                     <div class="video-thumb" data-video="videos/ai-2-3.mp4" data-title="AI案例3：数据驱动决策">
                         <div class="thumb-img">
                             <img src="images/ai-2-3.png" alt="AI案例3：数据驱动决策">
-                            <div class="play-overlay">▶</div>
                         </div>
                         <p>AI案例3：数据驱动决策</p>
                     </div>
@@ -749,6 +731,7 @@ function toggleMobileMenu() {
     }
 
 }
+
 
 
 
