@@ -733,4 +733,79 @@ function toggleMobileMenu() {
     }
 
 }
+// ========== 缺失的函数补全 ==========
+
+// 关闭弹窗
+function closeModal() {
+    const modal = document.getElementById('detailModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        
+        // 清空弹窗内容
+        const modalContent = document.getElementById('modalContent');
+        if (modalContent) {
+            modalContent.innerHTML = '';
+        }
+    }
+}
+
+// 关闭视频弹窗
+function closeVideoModal() {
+    const videoModal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    
+    if (videoModal) {
+        videoModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+    }
+}
+
+// 初始化视频缩略图点击事件
+function initVideoThumbnails() {
+    const videoThumbs = document.querySelectorAll('.video-thumb');
+    videoThumbs.forEach(thumb => {
+        thumb.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const videoSrc = this.dataset.video;
+            const videoTitle = this.dataset.title;
+            
+            if (videoSrc) {
+                openVideoModal(videoSrc, videoTitle);
+            }
+        });
+    });
+}
+
+// 滚动到顶部
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 滚动到联系板块
+function scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// 移动端菜单切换
+function toggleMobileMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    if (navMenu) {
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+    }
+}
 
