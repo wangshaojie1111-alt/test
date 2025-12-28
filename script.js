@@ -733,21 +733,24 @@ function toggleMobileMenu() {
     }
 
 }
-// ========== 缺失的函数补全 ==========
+// ========== 修复：添加缺失的函数 ==========
 
-// 关闭弹窗
+// 关闭详情弹窗
 function closeModal() {
     const modal = document.getElementById('detailModal');
     if (modal) {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
         
-        // 清空弹窗内容
+        // 清空内容
         const modalContent = document.getElementById('modalContent');
         if (modalContent) {
             modalContent.innerHTML = '';
         }
     }
+    
+    // 同时关闭视频弹窗
+    closeVideoModal();
 }
 
 // 关闭视频弹窗
@@ -757,38 +760,38 @@ function closeVideoModal() {
     
     if (videoModal) {
         videoModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
     }
     
     if (videoPlayer) {
         videoPlayer.pause();
         videoPlayer.currentTime = 0;
+        videoPlayer.src = '';
     }
+    
+    document.body.style.overflow = 'auto';
 }
 
-// 初始化视频缩略图点击事件
+// 初始化视频缩略图
 function initVideoThumbnails() {
     const videoThumbs = document.querySelectorAll('.video-thumb');
     videoThumbs.forEach(thumb => {
-        thumb.addEventListener('click', function(e) {
+        // 移除旧事件，避免重复绑定
+        thumb.replaceWith(thumb.cloneNode(true));
+        
+        const newThumb = thumb.parentNode.querySelector('.video-thumb');
+        newThumb.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
             const videoSrc = this.dataset.video;
             const videoTitle = this.dataset.title;
             
+            console.log('点击视频缩略图:', videoSrc, videoTitle);
+            
             if (videoSrc) {
                 openVideoModal(videoSrc, videoTitle);
             }
         });
-    });
-}
-
-// 滚动到顶部
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
     });
 }
 
@@ -804,8 +807,74 @@ function scrollToContact() {
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     if (navMenu) {
+        const isActive = navMenu.classList.contains('active');
         navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        document.body.style.overflow = isActive ? 'auto' : 'hidden';
     }
 }
 
+// ========== 修复：改进事件绑定 ==========
+
+// 重写初始化函数，避免事件冲突
+function initDetailModals() {
+    // 移除所有现有的事件监听器
+    const projectBtns = document.querySelectorAll('.project-btn');
+    projectBtns.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const sector = this.closest('.project-card').dataset.sector;
+            console.log('项目按钮点击，sector:', sector);
+            
+            if (sector && sectorDetails[sector]) {
+                openDetailModal(sector);
+            }
+        });
+    });
+}
+
+function initFeatureModals() {
+    const featureBtns = document.querySelectorAll('.feature-btn');
+    featureBtns.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const feature = this.closest('.feature-card').dataset.feature;
+            console.log('特色板块按钮点击，feature:', feature);
+            
+            if (feature && featureDetails[feature]) {
+                openFeatureModal(feature);
+            }
+        });
+    });
+}
+
+// ========== 页面加载完成后的初始化 ==========
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('页面加载完成，开始初始化...');
+    
+    // 初始化所有功能
+    initMobileMenu();
+    initScrollToTop();
+    initContactForm();
+    initDetailModals();
+    initFeatureModals();
+    initVideoModals();
+    initVideoThumbnails(); // 新增初始化
+    
+    // 监听滚动事件
+    window.addEventListener('scroll', handleScroll);
+    
+    // 监听窗口大小变化
+    window.addEventListener('resize', handleResize);
+    
+    console.log('初始化完成');
+});
