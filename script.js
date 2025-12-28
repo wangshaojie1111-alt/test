@@ -733,148 +733,74 @@ function toggleMobileMenu() {
     }
 
 }
-// ========== 修复：添加缺失的函数 ==========
+// ========== 事件绑定 ==========
 
-// 关闭详情弹窗
-function closeModal() {
-    const modal = document.getElementById('detailModal');
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        
-        // 清空内容
-        const modalContent = document.getElementById('modalContent');
-        if (modalContent) {
-            modalContent.innerHTML = '';
-        }
-    }
-    
-    // 同时关闭视频弹窗
-    closeVideoModal();
-}
-
-// 关闭视频弹窗
-function closeVideoModal() {
-    const videoModal = document.getElementById('videoModal');
-    const videoPlayer = document.getElementById('videoPlayer');
-    
-    if (videoModal) {
-        videoModal.style.display = 'none';
-    }
-    
-    if (videoPlayer) {
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
-        videoPlayer.src = '';
-    }
-    
-    document.body.style.overflow = 'auto';
-}
-
-// 初始化视频缩略图
-function initVideoThumbnails() {
-    const videoThumbs = document.querySelectorAll('.video-thumb');
-    videoThumbs.forEach(thumb => {
-        // 移除旧事件，避免重复绑定
-        thumb.replaceWith(thumb.cloneNode(true));
-        
-        const newThumb = thumb.parentNode.querySelector('.video-thumb');
-        newThumb.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const videoSrc = this.dataset.video;
-            const videoTitle = this.dataset.title;
-            
-            console.log('点击视频缩略图:', videoSrc, videoTitle);
-            
-            if (videoSrc) {
-                openVideoModal(videoSrc, videoTitle);
-            }
-        });
-    });
-}
-
-// 滚动到联系板块
-function scrollToContact() {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// 移动端菜单切换
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    if (navMenu) {
-        const isActive = navMenu.classList.contains('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = isActive ? 'auto' : 'hidden';
-    }
-}
-
-// ========== 修复：改进事件绑定 ==========
-
-// 重写初始化函数，避免事件冲突
 function initDetailModals() {
-    // 移除所有现有的事件监听器
+    console.log('初始化项目详情按钮...');
+    
     const projectBtns = document.querySelectorAll('.project-btn');
-    projectBtns.forEach(btn => {
+    console.log(`找到 ${projectBtns.length} 个项目按钮`);
+    
+    projectBtns.forEach((btn, index) => {
+        // 移除旧的事件监听器
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
         
+        // 添加新的事件监听器
         newBtn.addEventListener('click', function(e) {
+            console.log(`按钮 ${index} 被点击`);
             e.preventDefault();
             e.stopPropagation();
             
-            const sector = this.closest('.project-card').dataset.sector;
-            console.log('项目按钮点击，sector:', sector);
+            const card = this.closest('.project-card');
+            const sector = card.dataset.sector;
+            console.log('sector:', sector);
             
-            if (sector && sectorDetails[sector]) {
-                openDetailModal(sector);
+            if (sector) {
+                if (window.sectorDetails && window.sectorDetails[sector]) {
+                    openDetailModal(sector);
+                } else {
+                    console.error(`未找到 ${sector} 的详情数据`);
+                }
             }
         });
     });
 }
 
 function initFeatureModals() {
+    console.log('初始化特色板块按钮...');
+    
     const featureBtns = document.querySelectorAll('.feature-btn');
-    featureBtns.forEach(btn => {
+    console.log(`找到 ${featureBtns.length} 个特色板块按钮`);
+    
+    featureBtns.forEach((btn, index) => {
         const newBtn = btn.cloneNode(true);
         btn.parentNode.replaceChild(newBtn, btn);
         
         newBtn.addEventListener('click', function(e) {
+            console.log(`特色板块按钮 ${index} 被点击`);
             e.preventDefault();
             e.stopPropagation();
             
-            const feature = this.closest('.feature-card').dataset.feature;
-            console.log('特色板块按钮点击，feature:', feature);
+            const card = this.closest('.feature-card');
+            const feature = card.dataset.feature;
+            console.log('feature:', feature);
             
-            if (feature && featureDetails[feature]) {
-                openFeatureModal(feature);
+            if (feature) {
+                if (window.featureDetails && window.featureDetails[feature]) {
+                    openFeatureModal(feature);
+                } else {
+                    console.error(`未找到 ${feature} 的特色详情数据`);
+                }
             }
         });
     });
 }
 
-// ========== 页面加载完成后的初始化 ==========
+// ========== 确保在页面加载完成后执行 ==========
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('页面加载完成，开始初始化...');
-    
-    // 初始化所有功能
-    initMobileMenu();
-    initScrollToTop();
-    initContactForm();
+    console.log('页面加载完成，开始初始化事件...');
     initDetailModals();
     initFeatureModals();
-    initVideoModals();
-    initVideoThumbnails(); // 新增初始化
-    
-    // 监听滚动事件
-    window.addEventListener('scroll', handleScroll);
-    
-    // 监听窗口大小变化
-    window.addEventListener('resize', handleResize);
-    
-    console.log('初始化完成');
+    console.log('事件初始化完成');
 });
