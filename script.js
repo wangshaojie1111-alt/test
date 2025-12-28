@@ -148,19 +148,19 @@ const sectorDetails = {
                         </div>
                         <p>中医抗疫</p>
                     </div>
-                    <div class="video-thumb" data-video="videos/yl-2-2.mp4" data-title="VR手术演示">
+                    <div class="video-thumb" data-video="videos/yl-2-2.mp4" data-title="智慧医院物流传输系统">
                         <div class="thumb-img">
-                            <img src="images/yl-2-2.png" alt="VR手术演示">
+                            <img src="images/yl-2-2.png" alt="智慧医院物流传输系统">
                             <div class="play-overlay">▶</div>
                         </div>
-                        <p>VR手术演示</p>
+                        <p>智慧医院物流传输系统</p>
                     </div>
-                    <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="医学教育案例">
+                    <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="VR治疗系统">
                         
-                            <img src="images/yl-2-3.png" alt="医学教育案例">
+                            <img src="images/yl-2-3.png" alt="VR治疗系统">
                             <div class="play-overlay">▶</div>
                         </div>
-                        <p>医学教育案例</p>
+                        <p>VR治疗系统</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-4.mp4" data-title="儿童医院裸眼3D宣传">
                         
@@ -226,12 +226,12 @@ const sectorDetails = {
                         </div>
                         <p>全息数据</p>
                     </div>
-                    <div class="video-thumb" data-video="videos/zf-2-3.mp4" data-title="应急演练模拟">
+                    <div class="video-thumb" data-video="videos/zf-2-3.mp4" data-title="盘锦智慧体系">
                         
-                            <img src="images/zf-2-3.png" alt="应急演练模拟">
+                            <img src="images/zf-2-3.png" alt="盘锦智慧体系">
                             <div class="play-overlay">▶</div>
                         </div>
-                        <p>应急演练模拟</p>
+                        <p>盘锦智慧体系</p>
                     </div>
                 </div>
             </div>
@@ -340,12 +340,12 @@ const sectorDetails = {
                         </div>
                         <p>设备工作原理展示</p>
                     </div>
-                    <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
+                    <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="数据机房展示">
                         
-                            <img src="images/gy-2-2.png" alt="工厂数字孪生系统">
+                            <img src="images/gy-2-2.png" alt="数据机房展示">
                             <div class="play-overlay">▶</div>
                         </div>
-                        <p>工厂数字孪生系统</p>
+                        <p>数据机房展示</p>
                     </div>
                 </div>
             </div>
@@ -749,5 +749,6 @@ function toggleMobileMenu() {
     }
 
 }
+
 
 
