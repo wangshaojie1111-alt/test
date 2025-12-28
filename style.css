@@ -70,6 +70,9 @@ body {
     border: none;
     transition: all 0.3s ease;
     text-align: center;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
 }
 
 .btn-primary {
@@ -97,7 +100,7 @@ body {
 
 /* ========== 导航栏 ========== */
 .main-header {
-    background: #2c3e50; 
+    background: #2c3e50;
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -105,6 +108,7 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar {
@@ -126,13 +130,13 @@ body {
 
 .logo-icon {
     font-size: 28px;
-    color: #3498db;
+    color: white;
 }
 
 .logo-text {
     font-size: 24px;
     font-weight: bold;
-    color:white;
+    color: white;
     letter-spacing: 0.5px;
 }
 
@@ -146,7 +150,7 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: white;  /* 改为白色 */
+    color: white;
     font-weight: 600;
     padding: 8px 16px;
     border-radius: 6px;
@@ -165,7 +169,7 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    background: white;  /* 改为白色 */
+    background: white;
     left: 50%;
     bottom: 0;
     transition: all 0.3s ease;
@@ -173,37 +177,6 @@ body {
 }
 
 .nav-menu a:hover::after {
-    width: 80%;
-}
-
-.nav-item a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    position: relative;
-}
-
-.nav-item a:hover {
-    color: #3498db;
-}
-
-.nav-item a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #3498db, #2980b9);
-    left: 50%;
-    bottom: 0;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-item a:hover::after {
     width: 80%;
 }
 
@@ -236,7 +209,7 @@ body {
     display: none;
     font-size: 24px;
     cursor: pointer;
-    color: #2c3e50;
+    color: white;
 }
 
 /* ========== 首页 ========== */
@@ -295,7 +268,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     animation: fadeInUp 1s ease 0.4s both;
-    justify-content: center; 
+    justify-content: center;
 }
 
 @keyframes fadeInUp {
@@ -331,6 +304,8 @@ body {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    position: relative;
+    pointer-events: auto;
 }
 
 .project-card:hover {
@@ -341,15 +316,19 @@ body {
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 0;
+    padding-top: 66.67%; /* 3:2比例 */
+    position: relative;
     overflow: hidden;
     background: #f8f9fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1.5rem;
 }
 
 .project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -397,6 +376,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     flex-grow: 1;
+    min-height: 60px;
 }
 
 .project-features {
@@ -409,11 +389,18 @@ body {
 .feature-tag {
     background: #f8f9fa;
     color: #3498db;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
     border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.feature-tag:hover {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
 }
 
 .project-btn {
@@ -431,11 +418,16 @@ body {
     font-size: 1rem;
     transition: all 0.3s ease;
     width: 100%;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+    margin-top: auto;
 }
 
 .project-btn:hover {
     background: linear-gradient(135deg, #2980b9, #1f618d);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
 }
 
 .project-btn i {
@@ -445,6 +437,7 @@ body {
 .project-btn:hover i {
     transform: translateX(5px);
 }
+
 /* ========== 特色板块 ========== */
 .features-section {
     padding: 100px 0;
@@ -469,6 +462,7 @@ body {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .feature-card:hover {
@@ -518,6 +512,9 @@ body {
     box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
     width: 100%;
     max-width: 200px;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
 }
 
 .feature-btn:hover {
@@ -868,6 +865,7 @@ body {
     transition: all 0.3s ease;
     z-index: 999;
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    pointer-events: auto;
 }
 
 .back-to-top.show {
@@ -878,6 +876,58 @@ body {
 .back-to-top:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+/* ========== 视频缩略图 ========== */
+.thumb-img {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 66.67%; /* 3:2比例 */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+}
+
+.thumb-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.video-thumb:hover .thumb-img img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 87, 34, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+    opacity: 0;
+    z-index: 2;
+}
+
+.video-thumb:hover .play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* ========== 响应式设计 ========== */
@@ -908,30 +958,22 @@ body {
         padding: 20px 0;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
-
+    
     .nav-menu a {
-    color: white;  /* 改为白色 */
-    padding: 15px 20px;
-    display: block;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.nav-menu.active {
-    display: flex;
-}
+        color: white;
+        padding: 15px 20px;
+        display: block;
+        text-decoration: none;
+        font-weight: 600;
+    }
     
     .nav-menu.active {
         display: flex;
     }
     
-    .nav-item a {
-        display: block;
-        padding: 15px 20px;
-    }
-    
     .mobile-menu-btn {
         display: block;
+        color: white;
     }
     
     .hero-title {
@@ -979,61 +1021,30 @@ body {
     .modal-content {
         padding: 1.5rem;
     }
-
 }
 
-.logo-text {
-    color: white;
-}
-/* 视频缩略图容器 */
-.thumb-img {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 66.67%; /* 3:2比例 */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    margin-bottom: 1rem;
-    background: #f8f9fa; /* 占位背景色 */
+/* ========== 确保所有交互元素可点击 ========== */
+.project-card *,
+.feature-card *,
+.modal-content * {
+    pointer-events: auto;
 }
 
-.thumb-img img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持比例并填充容器 */
-    transition: transform 0.5s ease;
+/* 确保按钮在移动设备上容易点击 */
+.project-btn,
+.feature-btn,
+.btn-primary,
+.btn-secondary,
+.contact-btn {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    min-width: 44px;
 }
 
-.video-thumb:hover .thumb-img img {
-    transform: scale(1.05);
-}
-
-/* 播放按钮覆盖层 */
-.play-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 87, 34, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
-    opacity: 0;
-    z-index: 2;
-}
-
-.video-thumb:hover .play-overlay {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+/* 修复移动端菜单的z-index */
+@media (max-width: 768px) {
+    .nav-menu {
+        z-index: 1001;
+    }
 }
