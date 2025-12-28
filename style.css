@@ -912,26 +912,24 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;  /* 调整为更小的尺寸，适合50%缩略图 */
-    height: 40px;  /* 调整为更小的尺寸，适合50%缩略图 */
-    background: rgba(255, 87, 34, 0.85);  /* 稍微调整透明度，使更明显 */
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 87, 34, 0.9);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.3rem;  /* 调整字体大小 */
+    font-size: 1.8rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
-    opacity: 1;  /* 修改这里：始终显示 */
-    z-index: 10;  /* 提高层级 */
-    pointer-events: none;  /* 避免干扰点击事件 */
+    box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
+    opacity: 0;
+    z-index: 2;
 }
 
 .video-thumb:hover .play-overlay {
-    transform: translate(-50%, -50%) scale(1.15);  /* 悬停时稍微放大 */
-    background: rgba(255, 87, 34, 1);  /* 悬停时完全不透明 */
-    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* ========== 响应式设计 ========== */
@@ -1052,45 +1050,80 @@ body {
         z-index: 1001;
     }
 }
+/* ========== 修复视频缩略图播放按钮显示 ========== */
 
-/* ========== 修复播放按钮显示问题 ========== */
-
-/* 确保所有播放按钮始终可见 */
-.play-overlay {
-    opacity: 1 !important;  /* 始终显示 */
-    z-index: 10;  /* 提高层级，防止被覆盖 */
-    pointer-events: none;  /* 防止干扰点击事件 */
+/* 确保缩略图容器定位正确 */
+.thumb-img {
+    position: relative;
+    width: 50%;
+    padding-top: 33.33%;  /* 3:2比例的50% */
+    margin: 0 auto 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 针对弹窗内的播放按钮 */
-#detailModal .play-overlay,
+/* 播放按钮居中显示 */
+.thumb-img .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 87, 34, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(255, 87, 34, 0.3);
+    border: 3px solid white;
+    z-index: 10;
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 鼠标悬停效果 */
+.video-thumb:hover .play-overlay {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: rgba(255, 87, 34, 1);
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5), 0 0 0 4px rgba(255, 87, 34, 0.4);
+}
+
+/* 确保图片正确显示 */
+.thumb-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+}
+
+.video-thumb:hover .thumb-img img {
+    transform: scale(1.05);
+}
+
+/* 弹窗内缩略图样式 */
+.modal-content .thumb-img {
+    width: 50%;
+    padding-top: 25%;  /* 2:1比例的50% */
+    max-width: 150px;
+    margin: 0 auto 1rem;
+}
+
+/* 弹窗内播放按钮 */
 .modal-content .play-overlay {
     opacity: 1 !important;
     display: flex !important;
-    visibility: visible !important;
-}
-
-/* 悬停效果 */
-.video-thumb:hover .play-overlay,
-#detailModal .video-thumb:hover .play-overlay,
-.modal-content .video-thumb:hover .play-overlay {
-    transform: translate(-50%, -50%) scale(1.15);
-    background: rgba(255, 87, 34, 1);
-    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
-}
-
-/* 确保缩略图容器有正确的层级 */
-.thumb-img {
-    position: relative;
-    z-index: 1;
-}
-
-/* 确保播放按钮在图片上方 */
-.thumb-img img {
-    position: absolute;
-    z-index: 1;
-}
-
-.thumb-img .play-overlay {
-    z-index: 2;  /* 播放按钮在图片上方 */
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
 }
