@@ -880,17 +880,14 @@ body {
 
 /* ========== 视频缩略图 ========== */
 .thumb-img {
+    width: 100%;             /* 恢复为100% */
+    padding-top: 66.67%;     /* 恢复3:2比例 (2/3=0.6667) */
     position: relative;
-    width: 50%;  /* 修改这里：从100%改为50% */
-    height: 0;
-    padding-top: 33.33%;  /* 保持3:2比例，但数值也减半（66.67% ÷ 2 = 33.33%） */
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
     background: #f8f9fa;
-    margin-left: auto;  /* 添加这两行使缩略图居中 */
-    margin-right: auto; /* 添加这两行使缩略图居中 */
 }
 
 .thumb-img img {
@@ -1113,9 +1110,9 @@ body {
 
 /* 弹窗内缩略图样式 */
 .modal-content .thumb-img {
-    width: 50%;
-    padding-top: 25%;  /* 2:1比例的50% */
-    max-width: 150px;
+    width: 100%;             /* 恢复为100% */
+    padding-top: 66.67%;     /* 恢复3:2比例 */
+    max-width: none;         /* 移除最大宽度限制 */
     margin: 0 auto 1rem;
 }
 
@@ -1127,3 +1124,4 @@ body {
     height: 40px;
     font-size: 1.5rem;
 }
+
