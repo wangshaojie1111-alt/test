@@ -986,31 +986,25 @@ body {
     color: white;
 }
 /* 视频缩略图容器 */
-.video-thumb {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.video-thumb:hover {
-    transform: translateY(-5px);
-}
-
-/* 缩略图图片容器 */
 .thumb-img {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 0;
+    padding-top: 66.67%; /* 3:2比例 */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     margin-bottom: 1rem;
+    background: #f8f9fa; /* 占位背景色 */
 }
 
 .thumb-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 保持比例并填充容器 */
     transition: transform 0.5s ease;
 }
 
@@ -1036,20 +1030,10 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
     opacity: 0;
+    z-index: 2;
 }
 
 .video-thumb:hover .play-overlay {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.1);
 }
-
-/* 视频标题 */
-.video-thumb p {
-    color: #333;
-    font-weight: 500;
-    font-size: 1rem;
-    margin: 0;
-    line-height: 1.4;
-}
-
-
