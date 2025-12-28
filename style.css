@@ -881,14 +881,16 @@ body {
 /* ========== 视频缩略图 ========== */
 .thumb-img {
     position: relative;
-    width: 100%;
+    width: 50%;  /* 修改这里：从100%改为50% */
     height: 0;
-    padding-top: 66.67%; /* 3:2比例 */
+    padding-top: 33.33%;  /* 保持3:2比例，但数值也减半（66.67% ÷ 2 = 33.33%） */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     margin-bottom: 1rem;
     background: #f8f9fa;
+    margin-left: auto;  /* 添加这两行使缩略图居中 */
+    margin-right: auto; /* 添加这两行使缩略图居中 */
 }
 
 .thumb-img img {
@@ -1048,3 +1050,4 @@ body {
         z-index: 1001;
     }
 }
+
