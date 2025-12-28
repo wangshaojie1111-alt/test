@@ -139,32 +139,28 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-                <h4>案例视频</h4>
+                <h4>案例视频 (预留4个位置)</h4>
                 <div class="video-grid">
                     <div class="video-thumb" data-video="videos/yl-2-1.mp4" data-title="医患沟通案例">
                         <div class="thumb-img">
-                            
                             <div class="play-overlay">▶</div>
                         </div>
                         <p>医患沟通案例</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-2.mp4" data-title="VR手术演示">
                         <div class="thumb-img">
-                            
                             <div class="play-overlay">▶</div>
                         </div>
                         <p>VR手术演示</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="医学教育案例">
                         <div class="thumb-img">
-                            
                             <div class="play-overlay">▶</div>
                         </div>
                         <p>医学教育案例</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-4.mp4" data-title="药品展示案例">
                         <div class="thumb-img">
-                            
                             <div class="play-overlay">▶</div>
                         </div>
                         <p>药品展示案例</p>
@@ -172,8 +168,7 @@ const sectorDetails = {
                 </div>
             </div>
         `
-    }
-}
+    },
     'government': {
         title: '政府与大型企业',
         content: `
@@ -211,33 +206,30 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-            <h4>案例视频</h4>
-            <div class="video-grid">
-                <div class="video-thumb" data-video="videos/zf-2-1.mp4" data-title="城市规划展示">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                <h4>案例视频 (预留3个位置)</h4>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/zf-2-1.mp4" data-title="城市规划展示">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>城市规划展示</p>
                     </div>
-                    <p>城市规划展示</p>
-                </div>
-                <div class="video-thumb" data-video="videos/zf-2-2.mp4" data-title="工程项目汇报">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/zf-2-2.mp4" data-title="工程项目汇报">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>工程项目汇报</p>
                     </div>
-                    <p>工程项目汇报</p>
-                </div>
-                <div class="video-thumb" data-video="videos/zf-2-3.mp4" data-title="应急演练模拟">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/zf-2-3.mp4" data-title="应急演练模拟">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>应急演练模拟</p>
                     </div>
-                    <p>应急演练模拟</p>
                 </div>
             </div>
-        </div>
-    `
-}
+        `
+    },
     'tourism': {
         title: '文旅文博',
         content: `
@@ -275,33 +267,30 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-            <h4>案例视频</h4>
-            <div class="video-grid">
-                <div class="video-thumb" data-video="videos/wl-2-1.mp4" data-title="文物数字复原">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                <h4>案例视频 (预留3个位置)</h4>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/wl-2-1.mp4" data-title="文物数字复原">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>文物数字复原</p>
                     </div>
-                    <p>文物数字复原</p>
-                </div>
-                <div class="video-thumb" data-video="videos/wl-2-2.mp4" data-title="VR历史体验">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/wl-2-2.mp4" data-title="VR历史体验">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>VR历史体验</p>
                     </div>
-                    <p>VR历史体验</p>
-                </div>
-                <div class="video-thumb" data-video="videos/wl-2-3.mp4" data-title="数字文创展示">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/wl-2-3.mp4" data-title="数字文创展示">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>数字文创展示</p>
                     </div>
-                    <p>数字文创展示</p>
                 </div>
             </div>
-        </div>
-    `
-}
+        `
+    },
     'industrial': {
         title: '工业与制造',
         content: `
@@ -332,26 +321,24 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-            <h4>案例视频</h4>
-            <div class="video-grid">
-                <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                <h4>案例视频 (预留2个位置)</h4>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>设备工作原理展示</p>
                     </div>
-                    <p>设备工作原理展示</p>
-                </div>
-                <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>工厂数字孪生系统</p>
                     </div>
-                    <p>工厂数字孪生系统</p>
                 </div>
             </div>
-        </div>
-    `
-}
+        `
+    },
     'retail': {
         title: '展会、产品、零售',
         content: `
@@ -382,26 +369,24 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-            <h4>案例视频</h4>
-            <div class="video-grid">
-                <div class="video-thumb" data-video="videos/zl-2-1.mp4" data-title="展会AR互动案例">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                <h4>案例视频 (预留2个位置)</h4>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/zl-2-1.mp4" data-title="展会AR互动案例">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>展会AR互动案例</p>
                     </div>
-                    <p>展会AR互动案例</p>
-                </div>
-                <div class="video-thumb" data-video="videos/zl-2-2.mp4" data-title="产品发布3D展示">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/zl-2-2.mp4" data-title="产品发布3D展示">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>产品发布3D展示</p>
                     </div>
-                    <p>产品发布3D展示</p>
                 </div>
             </div>
-        </div>
-    `
-}
+        `
+    },
     'vr-gaming': {
         title: 'VR游戏开发',
         content: `
@@ -439,19 +424,20 @@ const sectorDetails = {
             </ol>
             
             <div class="video-section">
-            <h4>案例视频</h4>
-            <div class="video-grid">
-                <div class="video-thumb" data-video="videos/vr-2-1.mp4" data-title="VR游戏展示视频">
-                    <div class="thumb-img">
-                        
-                        <div class="play-overlay">▶</div>
+                <h4>案例视频 (预留1个位置)</h4>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/vr-2-1.mp4" data-title="VR游戏展示视频">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>VR游戏展示视频</p>
                     </div>
-                    <p>VR游戏展示视频</p>
                 </div>
             </div>
-        </div>
-    `
-}
+        `
+    }
+};
+
 // 特色板块详情数据
 const featureDetails = {
     'premium': {
@@ -745,4 +731,3 @@ function toggleMobileMenu() {
     }
 
 }
-
