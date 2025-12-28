@@ -321,26 +321,24 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-            <h4>案例视频</h4>
-            <div class="video-grid">
-                <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
-                    <div class="thumb-img">
-                        <img src="images/gy-2-1.jpg" alt="设备工作原理展示">
-                        <div class="play-overlay">▶</div>
+                <h4>案例视频 (预留2个位置)</h4>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>设备工作原理展示</p>
                     </div>
-                    <p>设备工作原理展示</p>
-                </div>
-                <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
-                    <div class="thumb-img">
-                        <img src="images/gy-2-2.jpg" alt="工厂数字孪生系统">
-                        <div class="play-overlay">▶</div>
+                    <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
+                        <div class="thumb-img">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <p>工厂数字孪生系统</p>
                     </div>
-                    <p>工厂数字孪生系统</p>
                 </div>
             </div>
-        </div>
-    `
-}
+        `
+    },
     'retail': {
         title: '展会、产品、零售',
         content: `
@@ -733,74 +731,3 @@ function toggleMobileMenu() {
     }
 
 }
-// ========== 事件绑定 ==========
-
-function initDetailModals() {
-    console.log('初始化项目详情按钮...');
-    
-    const projectBtns = document.querySelectorAll('.project-btn');
-    console.log(`找到 ${projectBtns.length} 个项目按钮`);
-    
-    projectBtns.forEach((btn, index) => {
-        // 移除旧的事件监听器
-        const newBtn = btn.cloneNode(true);
-        btn.parentNode.replaceChild(newBtn, btn);
-        
-        // 添加新的事件监听器
-        newBtn.addEventListener('click', function(e) {
-            console.log(`按钮 ${index} 被点击`);
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const card = this.closest('.project-card');
-            const sector = card.dataset.sector;
-            console.log('sector:', sector);
-            
-            if (sector) {
-                if (window.sectorDetails && window.sectorDetails[sector]) {
-                    openDetailModal(sector);
-                } else {
-                    console.error(`未找到 ${sector} 的详情数据`);
-                }
-            }
-        });
-    });
-}
-
-function initFeatureModals() {
-    console.log('初始化特色板块按钮...');
-    
-    const featureBtns = document.querySelectorAll('.feature-btn');
-    console.log(`找到 ${featureBtns.length} 个特色板块按钮`);
-    
-    featureBtns.forEach((btn, index) => {
-        const newBtn = btn.cloneNode(true);
-        btn.parentNode.replaceChild(newBtn, btn);
-        
-        newBtn.addEventListener('click', function(e) {
-            console.log(`特色板块按钮 ${index} 被点击`);
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const card = this.closest('.feature-card');
-            const feature = card.dataset.feature;
-            console.log('feature:', feature);
-            
-            if (feature) {
-                if (window.featureDetails && window.featureDetails[feature]) {
-                    openFeatureModal(feature);
-                } else {
-                    console.error(`未找到 ${feature} 的特色详情数据`);
-                }
-            }
-        });
-    });
-}
-
-// ========== 确保在页面加载完成后执行 ==========
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('页面加载完成，开始初始化事件...');
-    initDetailModals();
-    initFeatureModals();
-    console.log('事件初始化完成');
-});
