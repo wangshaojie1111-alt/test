@@ -321,24 +321,26 @@ const sectorDetails = {
             </div>
             
             <div class="video-section">
-                <h4>案例视频 (预留2个位置)</h4>
-                <div class="video-grid">
-                    <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
-                        <div class="thumb-img">
-                            <div class="play-overlay">▶</div>
-                        </div>
-                        <p>设备工作原理展示</p>
+            <h4>案例视频</h4>
+            <div class="video-grid">
+                <div class="video-thumb" data-video="videos/gy-2-1.mp4" data-title="设备工作原理展示">
+                    <div class="thumb-img">
+                        <img src="images/gy-2-1.jpg" alt="设备工作原理展示">
+                        <div class="play-overlay">▶</div>
                     </div>
-                    <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
-                        <div class="thumb-img">
-                            <div class="play-overlay">▶</div>
-                        </div>
-                        <p>工厂数字孪生系统</p>
+                    <p>设备工作原理展示</p>
+                </div>
+                <div class="video-thumb" data-video="videos/gy-2-2.mp4" data-title="工厂数字孪生系统">
+                    <div class="thumb-img">
+                        <img src="images/gy-2-2.jpg" alt="工厂数字孪生系统">
+                        <div class="play-overlay">▶</div>
                     </div>
+                    <p>工厂数字孪生系统</p>
                 </div>
             </div>
-        `
-    },
+        </div>
+    `
+}
     'retail': {
         title: '展会、产品、零售',
         content: `
@@ -731,3 +733,4 @@ function toggleMobileMenu() {
     }
 
 }
+
