@@ -226,6 +226,12 @@ const sectorDetails = {
                         </div>
                         <p>盘锦智慧体系项目▲</p>
                     </div>
+                    <div class="video-thumb" data-video="videos/zf-2-4.mp4" data-title="如皋-拾锦里裸眼3D项目▲">
+                        <div class="thumb-img">
+                            <img src="images/zf-2-4.png" alt="如皋-拾锦里裸眼3D项目▲">
+                        </div>
+                        <p>如皋-拾锦里裸眼3D项目▲</p>
+                    </div>
                 </div>
             </div>
         `
@@ -737,6 +743,7 @@ function toggleMobileMenu() {
     }
 
 }
+
 
 
 
