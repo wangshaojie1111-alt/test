@@ -153,11 +153,11 @@ const sectorDetails = {
                         </div>
                         <p>智慧医院物流传输系统▲</p>
                     </div>
-                    <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="VR治疗系统▲">
+                    <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="VR中风康复软件项目【示例】▲">
                         <div class="thumb-img">
-                            <img src="images/yl-2-3.png" alt="VR治疗系统▲">
+                            <img src="images/yl-2-3.png" alt="VR中风康复软件项目【示例】▲">
                         </div>
-                        <p>VR治疗系统▲</p>
+                        <p>VR中风康复软件项目【示例】▲</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-4.mp4" data-title="儿童医院裸眼3D宣传项目▲">
                         <div class="thumb-img">
@@ -743,6 +743,7 @@ function toggleMobileMenu() {
     }
 
 }
+
 
 
 
