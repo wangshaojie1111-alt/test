@@ -527,24 +527,97 @@ const featureDetails = {
     'cases': {
         title: '案例总汇',
         content: `
-            <h3>成功案例总汇</h3>
-            <p class="highlight">浏览我们所有的成功案例与项目，见证数字媒体技术在各行业的创新应用。</p>
+            <h3>参与案例总汇</h3>
+            <p class="highlight">浏览我们所涉及的成功案例与项目，见证数字媒体技术在各行业的创新应用。</p>
             
-            <div class="case-list">
+            <div class="video-section">
                 <h4>应用案例汇总：</h4>
-                <ol>
-                    <li><strong>医疗：</strong>数字人医助预问诊系统</li>
-                    <li><strong>医疗：</strong>高仿真腹腔镜手术模拟器</li>
-                    <li><strong>医疗：</strong>药品分子机制3D动画</li>
-                    <li><strong>城市：</strong>未来新城规划数字沙盘</li>
-                    <li><strong>城市：</strong>跨海大桥施工流程仿真动画</li>
-                    <li><strong>文旅：</strong>唐代宫殿VR穿越体验</li>
-                    <li><strong>文旅：</strong>破损瓷器AR互动复原项目</li>
-                    <li><strong>工业：</strong>大型机械设备AR维修指导</li>
-                    <li><strong>工业：</strong>智能工厂数字孪生系统</li>
-                    <li><strong>展会：</strong>裸眼3D新品发布会视频</li>
-                    <li><strong>VR专项：</strong>定制化VR安全教育体验舱</li>
-                </ol>
+                <div class="video-grid">
+                    <div class="video-thumb" data-video="videos/yl-2-1.mp4" data-title="《中医抗疫》中医宣传片▲">
+                        <div class="thumb-img">
+                            <img src="images/yl-2-1.png" alt="《中医抗疫》中医宣传片▲">
+                        </div>
+                        <p>《中医抗疫》中医宣传片▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/yl-2-2.mp4" data-title="智慧医院物流传输系统▲">
+                        <div class="thumb-img">
+                            <img src="images/yl-2-2.png" alt="智慧医院物流传输系统▲">
+                        </div>
+                        <p>智慧医院物流传输系统▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/yl-2-4.mp4" data-title="儿童医院裸眼3D宣传项目▲">
+                        <div class="thumb-img">
+                            <img src="images/yl-2-4.png" alt="儿童医院裸眼3D宣传项目▲">
+                        </div>
+                        <p>儿童医院裸眼3D宣传项目▲</p>
+                    </div>
+                   <div class="video-thumb" data-video="videos/zf-2-1.mp4" data-title="杭州新城宣传项目▲">
+                        <div class="thumb-img">
+                            <img src="images/zf-2-1.png" alt="杭州新城宣传项目▲">
+                        </div>
+                        <p>杭州新城宣传项目▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/zf-2-2.mp4" data-title="全息数据基站概念▲">
+                        <div class="thumb-img">
+                            <img src="images/zf-2-2.png" alt="全息数据基站概念▲">
+                        </div>
+                        <p>全息数据基站概念▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/zf-2-3.mp4" data-title="盘锦智慧体系项目▲">
+                        <div class="thumb-img">
+                            <img src="images/zf-2-3.png" alt="盘锦智慧体系项目▲">
+                        </div>
+                        <p>盘锦智慧体系项目▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/zf-2-4.mp4" data-title="如皋-拾锦里裸眼3D项目▲">
+                        <div class="thumb-img">
+                            <img src="images/zf-2-4.png" alt="如皋-拾锦里裸眼3D项目▲">
+                        </div>
+                        <p>如皋-拾锦里裸眼3D项目▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/wl-2-1.mp4" data-title="文博项目·《观音的故事》▲">
+                       <div class="thumb-img"> 
+                            <img src="images/wl-2-1.png" alt="文博项目·《观音的故事》▲">
+                        </div>
+                        <p>文博项目·《观音的故事》▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/wl-2-2.mp4" data-title="文博项目·《汝瓷》▲">
+                        <div class="thumb-img">
+                            <img src="images/wl-2-2.png" alt="文博项目·《汝瓷》▲">
+                        </div>
+                        <p>文博项目·《汝瓷》▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/wl-2-3.mp4" data-title="文旅项目·《稷下学宫》▲">
+                        <div class="thumb-img">
+                            <img src="images/wl-2-3.png" alt="文旅项目·《稷下学宫》▲">
+                        </div>
+                        <p>文旅项目·《稷下学宫》▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/wl-2-4.mp4" data-title="文博项目·《岩户观音的慈悲》▲">
+                        <div class="thumb-img">
+                            <img src="images/wl-2-4.png" alt="文博项目·《岩户观音的慈悲》▲">
+                        </div>
+                        <p>文博项目·《岩户观音的慈悲》▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/zl-2-1.mp4" data-title="工业展会裸眼3D案例▲">
+                        <div class="thumb-img">
+                            <img src="images/zl-2-1.png" alt="工业展会裸眼3D案例▲">
+                        </div>
+                        <p>工业展会裸眼3D案例▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/zl-2-2.mp4" data-title="维益裸眼3D宣传项目▲">
+                        <div class="thumb-img">
+                            <img src="images/zl-2-2.png" alt="维益裸眼3D宣传项目▲">
+                        </div>
+                        <p>维益裸眼3D宣传项目▲</p>
+                    </div>
+                    <div class="video-thumb" data-video="videos/vr-2-1.mp4" data-title="VR游戏展示视频·历史文化▲">
+                        <div class="thumb-img">
+                            <img src="images/vr-2-1.png" alt="VR游戏展示视频·历史文化▲">
+                        </div>
+                        <p>VR游戏展示视频·历史文化▲</p>
+                    </div>
+                </div>
             </div>
         `
     }
@@ -743,6 +816,7 @@ function toggleMobileMenu() {
     }
 
 }
+
 
 
 
