@@ -154,13 +154,13 @@ const sectorDetails = {
                         <p>智慧医院物流传输系统▲</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-3.mp4" data-title="VR治疗系统▲">
-                        
+                            <div class="thumb-img">
                             <img src="images/yl-2-3.png" alt="VR治疗系统▲">
                         </div>
                         <p>VR治疗系统▲</p>
                     </div>
                     <div class="video-thumb" data-video="videos/yl-2-4.mp4" data-title="儿童医院裸眼3D宣传项目▲">
-                        
+                            <div class="thumb-img">
                             <img src="images/yl-2-4.png" alt="儿童医院裸眼3D宣传项目▲">
                         </div>
                         <p>儿童医院裸眼3D宣传项目▲</p>
@@ -488,22 +488,22 @@ const featureDetails = {
             <p class="highlight">我们将持续探索AI技术与数字媒体内容的深度融合，在智能内容生成、个性化体验交互、数据驱动决策等方向加力，为客户创造更大价值。</p>
             
             <div class="video-section">
-                <h4>AI赋能案例 (预留3个位置)</h4>
+                <h4>AI赋能案例</h4>
                 <div class="video-grid">
                     <div class="video-thumb" data-video="videos/ai-2-1.mp4" data-title="AI案例1：智能内容生成">
-                        
+                            <div class="thumb-img">
                             <img src="images/ai-2-1.png" alt="AI案例1：智能内容生成">
                         </div>
                         <p>AI案例1：智能内容生成</p>
                     </div>
                     <div class="video-thumb" data-video="videos/ai-2-2.mp4" data-title="AI案例2：个性化交互体验">
-                        
+                            <div class="thumb-img">
                             <img src="images/ai-2-2.png" alt="AI案例2：个性化交互体验">
                         </div>
                         <p>AI案例2：个性化交互体验</p>
                     </div>
                     <div class="video-thumb" data-video="videos/ai-2-3.mp4" data-title="AI案例3：数据驱动决策">
-                        <div class="thumb-img">
+                            <div class="thumb-img">
                             <img src="images/ai-2-3.png" alt="AI案例3：数据驱动决策">
                         </div>
                         <p>AI案例3：数据驱动决策</p>
@@ -519,7 +519,7 @@ const featureDetails = {
             <p class="highlight">浏览我们所有的成功案例与项目，见证数字媒体技术在各行业的创新应用。</p>
             
             <div class="case-list">
-                <h4>典型应用案例 (10个)：</h4>
+                <h4>应用案例汇总：</h4>
                 <ol>
                     <li><strong>医疗：</strong>数字人医助预问诊系统</li>
                     <li><strong>医疗：</strong>高仿真腹腔镜手术模拟器</li>
@@ -731,6 +731,7 @@ function toggleMobileMenu() {
     }
 
 }
+
 
 
 
