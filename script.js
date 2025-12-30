@@ -527,8 +527,8 @@ const featureDetails = {
     'cases': {
         title: '案例总汇',
         content: `
-            <h3>参与案例总汇</h3>
-            <p class="highlight">浏览我们所涉及的成功案例与项目，见证数字媒体技术在各行业的创新应用。</p>
+            <h3>工作室成员参与及负责制作的案例总汇</h3>
+            <p class="highlight">浏览我们工作室成员所负责过的案例与项目，见证数字媒体技术的创新应用。</p>
             
             <div class="video-section">
                 <h4>应用案例汇总：</h4>
